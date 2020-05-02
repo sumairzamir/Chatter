@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2dY-9A-KKC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f4o-xh-Aln">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -208,10 +208,11 @@
             </objects>
             <point key="canvasLocation" x="648" y="600"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Forum-->
         <scene sceneID="093-Ch-cvT">
             <objects>
                 <navigationController id="GJF-xh-5IU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Forum" image="text.bubble" catalog="system" id="BTR-6u-s80"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NfQ-HD-JTA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -219,35 +220,65 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U57-kt-6ye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="1315"/>
+            <point key="canvasLocation" x="-268" y="1335"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="7Tg-gf-6Zf">
+        <!--Login View Controller-->
+        <scene sceneID="7SW-t4-muO">
             <objects>
-                <tableViewController id="EIP-1c-QEy" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NYt-AZ-QZF">
+                <viewController id="f4o-xh-Aln" customClass="LoginViewController" customModule="MuayThaiNotes" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hee-SC-uaW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-QU-2NB">
+                                <rect key="frame" x="79" y="320" width="262" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqT-9t-Cao">
+                                <rect key="frame" x="79" y="431" width="262" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGs-X8-cQd">
+                                <rect key="frame" x="188" y="557" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="D0g-Ki-nuO" kind="presentation" modalPresentationStyle="fullScreen" id="9u1-wb-jLV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aWM-BM-KCw"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="aXA-QU-2NB" id="PCz-eN-JPc"/>
+                        <outlet property="loginButton" destination="lGs-X8-cQd" id="Qbq-6i-ExO"/>
+                        <outlet property="passwordTextField" destination="zqT-9t-Cao" id="9Da-KR-RHF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HsX-Vc-yYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3900.0000000000005" y="600"/>
+        </scene>
+        <!--Forum View Controller-->
+        <scene sceneID="3Th-x5-6Nv">
+            <objects>
+                <viewController id="D0g-Ki-nuO" customClass="ForumViewController" customModule="MuayThaiNotes" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qCe-bb-ML5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AGq-wC-jec">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AGq-wC-jec" id="du7-jR-gA0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="EIP-1c-QEy" id="nhC-gi-sMy"/>
-                            <outlet property="delegate" destination="EIP-1c-QEy" id="6bR-X3-al2"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VEF-ni-ebr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="WVH-La-fhD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="69G-uc-QYk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFa-4o-4eU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="1315"/>
+            <point key="canvasLocation" x="-2790" y="600"/>
         </scene>
         <!--Browse Videos View Controller-->
         <scene sceneID="yBa-tt-gtW">
@@ -297,16 +328,18 @@
                     <connections>
                         <segue destination="eAr-gO-xpo" kind="relationship" relationship="viewControllers" id="hgh-XO-HEr"/>
                         <segue destination="Osi-kh-gfB" kind="relationship" relationship="viewControllers" id="DRE-Fd-2iv"/>
+                        <segue destination="GJF-xh-5IU" kind="relationship" relationship="viewControllers" id="bAj-DY-y9k"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xib-1B-6h0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1246" y="248"/>
+            <point key="canvasLocation" x="-1423" y="600"/>
         </scene>
     </scenes>
     <resources>
         <image name="bolt" catalog="system" width="101" height="128"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="128" height="81"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="text.bubble" catalog="system" width="128" height="110"/>
     </resources>
 </document>
