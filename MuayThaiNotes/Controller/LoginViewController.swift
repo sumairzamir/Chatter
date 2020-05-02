@@ -24,5 +24,27 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func loginTapped(_ sender: Any) {
+        
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                
+            } else {
+
+                self.performSegue(withIdentifier: "ForumViewController", sender: nil)
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
     
 }
