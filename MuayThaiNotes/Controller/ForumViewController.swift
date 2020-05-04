@@ -16,6 +16,10 @@ class ForumViewController: MessagesViewController {
     
     var messages: [Message] = []
     
+    var currentUserUid = Auth.auth().currentUser?.uid
+    
+    var currentDisplayName = ""
+    
     // Add scrolling/keyboard functionality!
     
     let formatter: DateFormatter = {
@@ -24,6 +28,7 @@ class ForumViewController: MessagesViewController {
         return formatter
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messagesCollectionView.messagesDataSource = self
@@ -31,13 +36,120 @@ class ForumViewController: MessagesViewController {
         messageInputBar.delegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         title = "Forum View"
+
         
-    }
+        let dbMessages = Firestore.firestore().collection("messages")
+//
+//        dbMessages.getDocuments { (snapshot, error) in
+//            guard let snapshot = snapshot else {
+//                print(error!.localizedDescription)
+//                return
+//            }
+//
+//            let data = snapshot.documents
+//
+//            for messagesData in data {
+////
+////                print("this is the \(messagesData.value(forKey: "user"))")
+////
+//                let messageId = messagesData.data()["messageId"] as! String
+////                let user = messagesData.data()["user"] as! String
+////                let sentDate = messagesData.data()["sentDate"] as! String
+//                let text = messagesData.data()["text"] as! String
+//
+//                let user = SampleData.shared.currentSender
+//
+//
+//                let message = Message(text: text, user: user, messageId: messageId, date: Date())
+//
+//                self.messages.append(message)
+//                self.messagesCollectionView.reloadData()
+//
+//            }
+//
+//        }
+        
+        dbMessages.addSnapshotListener { (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            let changesData = snapshot.documentChanges
+            
+            let source = snapshot.metadata.hasPendingWrites
+            
+            print(source)
+            print(changesData.count)
+            if source == false {
+            for changes in changesData {
+                
+//                print(changes.document.data().count)
+                let user = changes.document.data()["user"] as! String
+                let messageId = changes.document.data()["messageId"] as! String
+                let text = changes.document.data()["text"] as! String
+                let timestamp = changes.document.data()["sentDate"] as! Timestamp
+                let userId = changes.document.data()["userId"] as! String
+                
+//                print(timestamp.dateValue())
+                
+                let date = timestamp.dateValue()
+//
+//                let formattedDate = self.formatter.date(from: date)
+                
+                let userData = User(senderId: userId, displayName: user)
+//
+//                print(text)
+//                print(messageId)
+//                  let user = SampleData.shared.currentSender
+                
+                let message = Message(text: text, user: userData, messageId: messageId, date: date)
+                
+                self.messages.append(message)
+                self.messagesCollectionView.reloadData()
+            }
+            }
+        }
+            
+            
+            
+            
+            // remember to remove the listener
+            
+//        }
+        
+        
+//
+//        dbMessages.getDocuments { (snapshot, error) in
+//            if error != nil {
+//                print(error?.localizedDescription)
+//            } else {
+//
+//                for messagesData in snapshot!.documents {
+//
+//                    print(messagesData)
+//
+//                    let messageData = messagesData.data()
+//
+//                    messages.append(messageData)
+//
+//                    }
+//
+//
+//
+//
+//
+//
+//            }
+//        }
+
+
+    
     
     // Understand following two methods!!!
     
-    func insertMessage(_ message: Message) {
-           messages.append(message)
+//    func insertMessage(_ message: Message) {
+//           messages.append(message)
            // Reload last section to update header/footer labels and insert a new one
 //           messagesCollectionView.performBatchUpdates({
 //               messagesCollectionView.insertSections([messages.count - 1])
@@ -65,7 +177,31 @@ class ForumViewController: MessagesViewController {
 extension ForumViewController: MessagesDataSource {
     
     func currentSender() -> SenderType {
-        return SampleData.shared.currentSender
+        
+        let db = Firestore.firestore()
+        
+        let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid)
+        
+        userQuery.getDocuments { (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            let userData = snapshot.documents
+            
+            for userDetails in userData {
+                
+                let displayName = userDetails.data()["firstName"] as! String
+                
+                self.currentDisplayName = displayName
+            }
+        }
+        
+        let currentUser = User(senderId: currentUserUid!, displayName: currentDisplayName)
+        
+        return currentUser
+        
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
@@ -144,8 +280,10 @@ extension ForumViewController: InputBarAccessoryViewDelegate {
         messageInputBar.inputTextView.text = String()
         insertMessages(components)
         
+        
+        
         // Can prob do elsewhere
-        messagesCollectionView.reloadData()
+//        messagesCollectionView.reloadData()
         
     }
     
@@ -156,7 +294,39 @@ extension ForumViewController: InputBarAccessoryViewDelegate {
             let user = SampleData.shared.currentSender
             if let str = component as? String {
                 let message = Message(text: str, user: user, messageId: UUID().uuidString, date: Date())
-                insertMessage(message)
+//                insertMessage(message)
+            
+                let db = Firestore.firestore()
+                
+                
+                let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid)
+                
+                userQuery.getDocuments { (snapshot, error) in
+                    guard let snapshot = snapshot else {
+                        print(error?.localizedDescription)
+                        return
+                    }
+                    
+                    let userData = snapshot.documents
+                    
+                    for userDetails in userData {
+                        
+                        let displayName = userDetails.data()["firstName"] as! String
+                        
+                        db.collection("messages").addDocument(data: ["messageId": message.messageId, "sentDate": message.sentDate, "text": str, "user": displayName, "userId": self.currentUserUid]) { (error) in
+                            if error != nil {
+                                print(error!.localizedDescription)
+                            }
+                            
+                        }
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                
             }
             
             
@@ -165,5 +335,8 @@ extension ForumViewController: InputBarAccessoryViewDelegate {
         
         
     }
+    
+    
+
     
 }
