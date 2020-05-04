@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8844BACD246091140065C34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8844BACC246091140065C34E /* Main.storyboard */; };
 		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
 		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
 		88C7A6E22455C09400B0520F /* MuayThaiNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */; };
@@ -25,14 +26,14 @@
 		88F822D5245B705400C61FB5 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D4245B705400C61FB5 /* Messages.swift */; };
 		88F822D7245B717400C61FB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D6245B717400C61FB5 /* User.swift */; };
 		88F822D9245B743C00C61FB5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D8245B743C00C61FB5 /* SampleData.swift */; };
-		88F822DA245B766500C61FB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F822D0245A138400C61FB5 /* Main.storyboard */; };
 		88F822DC245D8A3400C61FB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DB245D8A3400C61FB5 /* LoginViewController.swift */; };
 		88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DD245DA35400C61FB5 /* SignUpViewController.swift */; };
 		C2DA1D724D79AE64D481299D /* Pods_MuayThaiNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		88C7A6D42455C09300B0520F /* MuayThaiNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuayThaiNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8844BACC246091140065C34E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../MuayThaiNotes - DO NOT DELETE/MuayThaiNotes/Assets/Main.storyboard"; sourceTree = "<group>"; };
+		88C7A6D42455C09300B0520F /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C7A6D92455C09300B0520F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuayThaiNotes.xcdatamodel; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		88F0445E245893CE003C9381 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		88F0446024589C10003C9381 /* CombinationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsCell.swift; sourceTree = "<group>"; };
 		88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		88F822D0245A138400C61FB5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = /Users/aiman.nabeel/Documents/SumairZamir/MuayThaiNotes/MuayThaiNotes/Assets/Main.storyboard; sourceTree = "<absolute>"; };
 		88F822D1245A163500C61FB5 /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
 		88F822D4245B705400C61FB5 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		88F822D6245B717400C61FB5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		88C7A6CB2455C09300B0520F = {
 			isa = PBXGroup;
 			children = (
-				88C7A6D62455C09300B0520F /* MuayThaiNotes */,
+				88C7A6D62455C09300B0520F /* Chatter */,
 				88C7A6D52455C09300B0520F /* Products */,
 				EAFFB39F8A07A2A8F3CA0C30 /* Pods */,
 				3E16167A66BF32FCD6913304 /* Frameworks */,
@@ -93,12 +93,12 @@
 		88C7A6D52455C09300B0520F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88C7A6D42455C09300B0520F /* MuayThaiNotes.app */,
+				88C7A6D42455C09300B0520F /* Chatter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88C7A6D62455C09300B0520F /* MuayThaiNotes */ = {
+		88C7A6D62455C09300B0520F /* Chatter */ = {
 			isa = PBXGroup;
 			children = (
 				88C7A6D72455C09300B0520F /* AppDelegate.swift */,
@@ -110,7 +110,7 @@
 				88C7A6F02455C0B100B0520F /* Controller */,
 				88C7A6F12455C0CC00B0520F /* Assets */,
 			);
-			path = MuayThaiNotes;
+			path = Chatter;
 			sourceTree = "<group>";
 		};
 		88C7A6EE2455C0A800B0520F /* Model */ = {
@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				88C7A6E32455C09C00B0520F /* Assets.xcassets */,
-				88F822D0245A138400C61FB5 /* Main.storyboard */,
+				8844BACC246091140065C34E /* Main.storyboard */,
 				88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88C7A6D32455C09300B0520F /* MuayThaiNotes */ = {
+		88C7A6D32455C09300B0520F /* Chatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "MuayThaiNotes" */;
+			buildConfigurationList = 88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "Chatter" */;
 			buildPhases = (
 				CC0C70ABC503D664A94CD3C9 /* [CP] Check Pods Manifest.lock */,
 				88C7A6D02455C09300B0520F /* Sources */,
@@ -186,9 +186,9 @@
 			);
 			dependencies = (
 			);
-			name = MuayThaiNotes;
+			name = Chatter;
 			productName = MuayThaiNotes;
-			productReference = 88C7A6D42455C09300B0520F /* MuayThaiNotes.app */;
+			productReference = 88C7A6D42455C09300B0520F /* Chatter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "MuayThaiNotes" */;
+			buildConfigurationList = 88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "Chatter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88C7A6D32455C09300B0520F /* MuayThaiNotes */,
+				88C7A6D32455C09300B0520F /* Chatter */,
 			);
 		};
 /* End PBXProject section */
@@ -232,7 +232,7 @@
 				88C7A6E72455C09C00B0520F /* LaunchScreen.storyboard in Resources */,
 				88F822CE245A0BD600C61FB5 /* GoogleService-Info.plist in Resources */,
 				88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */,
-				88F822DA245B766500C61FB5 /* Main.storyboard in Resources */,
+				8844BACD246091140065C34E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,12 +457,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AMAMNTQA2;
-				INFOPLIST_FILE = MuayThaiNotes/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Chatter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.MuayThaiNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.Chatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,12 +476,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2AMAMNTQA2;
-				INFOPLIST_FILE = MuayThaiNotes/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Chatter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.MuayThaiNotes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.Chatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,7 +491,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "MuayThaiNotes" */ = {
+		88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "Chatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88C7A6E92455C09C00B0520F /* Debug */,
@@ -500,7 +500,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "MuayThaiNotes" */ = {
+		88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "Chatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88C7A6EC2455C09C00B0520F /* Debug */,
