@@ -2,7 +2,7 @@
 //  ForumViewController.swift
 //  MuayThaiNotes
 //
-//  Created by Aiman Nabeel on 29/04/2020.
+//  Created by Sumair Zamir on 29/04/2020.
 //  Copyright © 2020 Sumair Zamir. All rights reserved.
 //
 
@@ -69,6 +69,8 @@ class ForumViewController: MessagesViewController {
 //
 //        }
         
+        // empty the array instead of metadata adjustment?
+        
         dbMessages.addSnapshotListener { (snapshot, error) in
             guard let snapshot = snapshot else {
                 print(error!.localizedDescription)
@@ -79,8 +81,8 @@ class ForumViewController: MessagesViewController {
             
             let source = snapshot.metadata.hasPendingWrites
             
-            print(source)
-            print(changesData.count)
+//            print(source)
+//            print(changesData.count)
             if source == false {
             for changes in changesData {
                 
@@ -171,6 +173,13 @@ class ForumViewController: MessagesViewController {
 //
 //           return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
 //       }
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // detach listener?
+        
+    }
     
 }
 
@@ -180,11 +189,11 @@ extension ForumViewController: MessagesDataSource {
         
         let db = Firestore.firestore()
         
-        let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid)
+        let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid!)
         
         userQuery.getDocuments { (snapshot, error) in
             guard let snapshot = snapshot else {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 return
             }
             
@@ -299,11 +308,11 @@ extension ForumViewController: InputBarAccessoryViewDelegate {
                 let db = Firestore.firestore()
                 
                 
-                let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid)
+                let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid!)
                 
                 userQuery.getDocuments { (snapshot, error) in
                     guard let snapshot = snapshot else {
-                        print(error?.localizedDescription)
+                        print(error!.localizedDescription)
                         return
                     }
                     
@@ -313,7 +322,7 @@ extension ForumViewController: InputBarAccessoryViewDelegate {
                         
                         let displayName = userDetails.data()["firstName"] as! String
                         
-                        db.collection("messages").addDocument(data: ["messageId": message.messageId, "sentDate": message.sentDate, "text": str, "user": displayName, "userId": self.currentUserUid]) { (error) in
+                        db.collection("messages").addDocument(data: ["messageId": message.messageId, "sentDate": message.sentDate, "text": str, "user": displayName, "userId": self.currentUserUid!]) { (error) in
                             if error != nil {
                                 print(error!.localizedDescription)
                             }
