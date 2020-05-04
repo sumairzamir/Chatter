@@ -37,6 +37,13 @@ class ForumViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         title = "Forum View"
 
+       let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
+        
+        let db = Firestore.firestore()
+        
+        db.settings = settings
+        
         
         let dbMessages = Firestore.firestore().collection("messages")
 //

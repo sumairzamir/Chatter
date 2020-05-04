@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  MuayThaiNotes
 //
-//  Created by Aiman Nabeel on 02/05/2020.
+//  Created by Sumair Zamir on 02/05/2020.
 //  Copyright © 2020 Sumair Zamir. All rights reserved.
 //
 
