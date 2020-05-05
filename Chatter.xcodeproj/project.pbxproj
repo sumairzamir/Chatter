@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71F5F4D03B59D33EC21F532A /* Pods_Chatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AF9C0DDAFB58DD0196703B /* Pods_Chatter.framework */; };
 		8844BACD246091140065C34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8844BACC246091140065C34E /* Main.storyboard */; };
 		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
 		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
-		88C7A6E22455C09400B0520F /* MuayThaiNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */; };
+		88C7A6E22455C09400B0520F /* Chatter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6E02455C09400B0520F /* Chatter.xcdatamodeld */; };
 		88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E32455C09C00B0520F /* Assets.xcassets */; };
 		88C7A6E72455C09C00B0520F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */; };
 		88C7A6F32455D72800B0520F /* CombinationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F22455D72800B0520F /* CombinationsViewController.swift */; };
@@ -28,11 +29,11 @@
 		88F822D9245B743C00C61FB5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D8245B743C00C61FB5 /* SampleData.swift */; };
 		88F822DC245D8A3400C61FB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DB245D8A3400C61FB5 /* LoginViewController.swift */; };
 		88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DD245DA35400C61FB5 /* SignUpViewController.swift */; };
-		C2DA1D724D79AE64D481299D /* Pods_MuayThaiNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8844BACC246091140065C34E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../MuayThaiNotes - DO NOT DELETE/MuayThaiNotes/Assets/Main.storyboard"; sourceTree = "<group>"; };
+		6D1A01F5988B73C12E00ABAC /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
+		8844BACC246091140065C34E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		88C7A6D42455C09300B0520F /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C7A6D92455C09300B0520F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,9 +56,8 @@
 		88F822D8245B743C00C61FB5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		88F822DB245D8A3400C61FB5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		88F822DD245DA35400C61FB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		BA10475C09A0BB3F4A09CD7F /* Pods-MuayThaiNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuayThaiNotes.release.xcconfig"; path = "Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes.release.xcconfig"; sourceTree = "<group>"; };
-		C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuayThaiNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E012C65457B63A00CF934BD8 /* Pods-MuayThaiNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuayThaiNotes.debug.xcconfig"; path = "Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		A772B9662C7CE7A4C92BBADF /* Pods-Chatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.debug.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.debug.xcconfig"; sourceTree = "<group>"; };
+		E4AF9C0DDAFB58DD0196703B /* Pods_Chatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,28 +65,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2DA1D724D79AE64D481299D /* Pods_MuayThaiNotes.framework in Frameworks */,
+				71F5F4D03B59D33EC21F532A /* Pods_Chatter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E16167A66BF32FCD6913304 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		88C7A6CB2455C09300B0520F = {
 			isa = PBXGroup;
 			children = (
 				88C7A6D62455C09300B0520F /* Chatter */,
 				88C7A6D52455C09300B0520F /* Products */,
 				EAFFB39F8A07A2A8F3CA0C30 /* Pods */,
-				3E16167A66BF32FCD6913304 /* Frameworks */,
+				E502243C81E088272A0D6CD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,7 +108,7 @@
 		88C7A6EE2455C0A800B0520F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */,
+				88C7A6E02455C09400B0520F /* Chatter.xcdatamodeld */,
 				88F0445E245893CE003C9381 /* DataController.swift */,
 				88F822D4245B705400C61FB5 /* Messages.swift */,
 				88F822D6245B717400C61FB5 /* User.swift */,
@@ -159,11 +151,19 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		E502243C81E088272A0D6CD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4AF9C0DDAFB58DD0196703B /* Pods_Chatter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EAFFB39F8A07A2A8F3CA0C30 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E012C65457B63A00CF934BD8 /* Pods-MuayThaiNotes.debug.xcconfig */,
-				BA10475C09A0BB3F4A09CD7F /* Pods-MuayThaiNotes.release.xcconfig */,
+				A772B9662C7CE7A4C92BBADF /* Pods-Chatter.debug.xcconfig */,
+				6D1A01F5988B73C12E00ABAC /* Pods-Chatter.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -175,19 +175,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "Chatter" */;
 			buildPhases = (
-				CC0C70ABC503D664A94CD3C9 /* [CP] Check Pods Manifest.lock */,
+				35C9E5D3F1BB927EB8EC0D70 /* [CP] Check Pods Manifest.lock */,
 				88C7A6D02455C09300B0520F /* Sources */,
 				88C7A6D12455C09300B0520F /* Frameworks */,
 				88C7A6D22455C09300B0520F /* Resources */,
-				2A27FFF678152C51AB75F9E8 /* [CP] Embed Pods Frameworks */,
-				8114033E6AB91F8E3C2C796A /* [CP] Copy Pods Resources */,
+				534B99BF57CEFFDC3F898216 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Chatter;
-			productName = MuayThaiNotes;
+			productName = Chatter;
 			productReference = 88C7A6D42455C09300B0520F /* Chatter.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -239,41 +238,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A27FFF678152C51AB75F9E8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8114033E6AB91F8E3C2C796A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC0C70ABC503D664A94CD3C9 /* [CP] Check Pods Manifest.lock */ = {
+		35C9E5D3F1BB927EB8EC0D70 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,11 +253,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MuayThaiNotes-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Chatter-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		534B99BF57CEFFDC3F898216 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -304,7 +286,7 @@
 			files = (
 				88C7A6F52455D73300B0520F /* StrikesViewController.swift in Sources */,
 				88C7A6F32455D72800B0520F /* CombinationsViewController.swift in Sources */,
-				88C7A6E22455C09400B0520F /* MuayThaiNotes.xcdatamodeld in Sources */,
+				88C7A6E22455C09400B0520F /* Chatter.xcdatamodeld in Sources */,
 				88F0446124589C10003C9381 /* CombinationsCell.swift in Sources */,
 				88C7A6F72455D74C00B0520F /* AddComboViewController.swift in Sources */,
 				88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */,
@@ -452,7 +434,7 @@
 		};
 		88C7A6EC2455C09C00B0520F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E012C65457B63A00CF934BD8 /* Pods-MuayThaiNotes.debug.xcconfig */;
+			baseConfigurationReference = A772B9662C7CE7A4C92BBADF /* Pods-Chatter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,7 +453,7 @@
 		};
 		88C7A6ED2455C09C00B0520F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA10475C09A0BB3F4A09CD7F /* Pods-MuayThaiNotes.release.xcconfig */;
+			baseConfigurationReference = 6D1A01F5988B73C12E00ABAC /* Pods-Chatter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,13 +494,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */ = {
+		88C7A6E02455C09400B0520F /* Chatter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */,
 			);
 			currentVersion = 88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */;
-			path = MuayThaiNotes.xcdatamodeld;
+			path = Chatter.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
