@@ -13,24 +13,30 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var secondNameTextField: UITextField!
+    @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         
     }
     
-    
+    func configureUI() {
+        
+        Style.styleTextField(displayNameTextField)
+        Style.styleTextField(emailTextField)
+        Style.styleTextField(passwordTextField)
+        Style.styleButtonBlue(signUpButton)
+        
+    }
     
     @IBAction func signUpTapped(_ sender: Any) {
         
 
-        let firstName = firstNameTextField.text!
-        let secondName = secondNameTextField.text!
+        let displayName = displayNameTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
@@ -45,13 +51,13 @@ class SignUpViewController: UIViewController {
                 
                 let db = Firestore.firestore()
                 
-                db.collection("users").addDocument(data: ["firstName": firstName, "secondName": secondName, "uid": result!.user.uid]) { (error) in
+                db.collection("users").addDocument(data: ["displayName": displayName, "uid": result!.user.uid]) { (error) in
                     
                     if error != nil {
                         print("error after firestore \(error!.localizedDescription)")
                     }
                     
-                    self.performSegue(withIdentifier: "ForumViewController", sender: nil)
+                    self.performSegue(withIdentifier: "ChatViewController", sender: nil)
                     
                 }
                 

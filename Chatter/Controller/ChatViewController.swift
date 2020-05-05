@@ -1,5 +1,5 @@
 //
-//  ForumViewController.swift
+//  ChatViewController.swift
 //  Chatter
 //
 //  Created by Sumair Zamir on 29/04/2020.
@@ -14,13 +14,15 @@ import MessageKit
 import Firebase
 import InputBarAccessoryView
 
-class ForumViewController: MessagesViewController {
+class ChatViewController: MessagesViewController {
     
     var messages: [Message] = []
     
     var currentUserUid = Auth.auth().currentUser?.uid
     
     var currentDisplayName = ""
+    
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     // Add scrolling/keyboard functionality!
     
@@ -30,14 +32,28 @@ class ForumViewController: MessagesViewController {
         return formatter
     }()
     
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError {
+            print("Error signing out: %@", signOutError)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messageInputBar.delegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        title = "Forum View"
+        title = "Chatter"
 
        let settings = FirestoreSettings()
         settings.isPersistenceEnabled = true
@@ -48,35 +64,6 @@ class ForumViewController: MessagesViewController {
         
         
         let dbMessages = Firestore.firestore().collection("messages")
-//
-//        dbMessages.getDocuments { (snapshot, error) in
-//            guard let snapshot = snapshot else {
-//                print(error!.localizedDescription)
-//                return
-//            }
-//
-//            let data = snapshot.documents
-//
-//            for messagesData in data {
-////
-////                print("this is the \(messagesData.value(forKey: "user"))")
-////
-//                let messageId = messagesData.data()["messageId"] as! String
-////                let user = messagesData.data()["user"] as! String
-////                let sentDate = messagesData.data()["sentDate"] as! String
-//                let text = messagesData.data()["text"] as! String
-//
-//                let user = SampleData.shared.currentSender
-//
-//
-//                let message = Message(text: text, user: user, messageId: messageId, date: Date())
-//
-//                self.messages.append(message)
-//                self.messagesCollectionView.reloadData()
-//
-//            }
-//
-//        }
         
         // empty the array instead of metadata adjustment?
         
@@ -125,67 +112,8 @@ class ForumViewController: MessagesViewController {
             }
         }
             
-            
-            
-            
-            // remember to remove the listener
-            
-//        }
-        
-        
-//
-//        dbMessages.getDocuments { (snapshot, error) in
-//            if error != nil {
-//                print(error?.localizedDescription)
-//            } else {
-//
-//                for messagesData in snapshot!.documents {
-//
-//                    print(messagesData)
-//
-//                    let messageData = messagesData.data()
-//
-//                    messages.append(messageData)
-//
-//                    }
-//
-//
-//
-//
-//
-//
-//            }
-//        }
-
-
+    }
     
-    
-    // Understand following two methods!!!
-    
-//    func insertMessage(_ message: Message) {
-//           messages.append(message)
-           // Reload last section to update header/footer labels and insert a new one
-//           messagesCollectionView.performBatchUpdates({
-//               messagesCollectionView.insertSections([messages.count - 1])
-//               if messages.count >= 2 {
-//                   messagesCollectionView.reloadSections([messages.count - 2])
-//               }
-//           }, completion: { [weak self] _ in
-//               if self?.isLastSectionVisible() == true {
-//                   self?.messagesCollectionView.scrollToBottom(animated: true)
-//               }
-//           })
-       }
-    
-//    func isLastSectionVisible() -> Bool {
-//
-//           guard !messages.isEmpty else { return false }
-//
-//           let lastIndexPath = IndexPath(item: 0, section: messages.count - 1)
-//
-//           return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
-//       }
- 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -195,7 +123,7 @@ class ForumViewController: MessagesViewController {
     
 }
 
-extension ForumViewController: MessagesDataSource {
+extension ChatViewController: MessagesDataSource {
     
     func currentSender() -> SenderType {
         
@@ -258,7 +186,7 @@ extension ForumViewController: MessagesDataSource {
     
 }
 
-extension ForumViewController: MessagesLayoutDelegate {
+extension ChatViewController: MessagesLayoutDelegate {
     
     func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 18
@@ -278,11 +206,11 @@ extension ForumViewController: MessagesLayoutDelegate {
     
 }
 
-extension ForumViewController: MessagesDisplayDelegate {
+extension ChatViewController: MessagesDisplayDelegate {
 
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         // Understand the syntax here?
-        return isFromCurrentSender(message: message) ? .darkGray : .lightGray
+        return isFromCurrentSender(message: message) ? .systemBlue : .systemGray6
     }
 
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
@@ -293,7 +221,7 @@ extension ForumViewController: MessagesDisplayDelegate {
 
 }
 
-extension ForumViewController: InputBarAccessoryViewDelegate {
+extension ChatViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         

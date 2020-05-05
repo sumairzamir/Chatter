@@ -12,23 +12,31 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
-    
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         
     }
+    
+    func configureUI() {
+        
+        Style.styleTextField(emailTextField)
+        Style.styleTextField(passwordTextField)
+        Style.styleButtonBlue(loginButton)
+        Style.styleButtonHollow(registerButton)
+        
+    }
+    
     
     @IBAction func loginTapped(_ sender: Any) {
         
         let email = emailTextField.text!
         let password = passwordTextField.text!
-        
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
@@ -36,7 +44,7 @@ class LoginViewController: UIViewController {
                 
             } else {
 
-                self.performSegue(withIdentifier: "ForumViewController", sender: nil)
+                self.performSegue(withIdentifier: "ChatViewController", sender: nil)
             }
             
             
