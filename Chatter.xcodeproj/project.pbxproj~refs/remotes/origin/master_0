@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
+		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
+		88C7A6E22455C09400B0520F /* MuayThaiNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */; };
+		88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E32455C09C00B0520F /* Assets.xcassets */; };
+		88C7A6E72455C09C00B0520F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */; };
+		88C7A6F32455D72800B0520F /* CombinationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F22455D72800B0520F /* CombinationsViewController.swift */; };
+		88C7A6F52455D73300B0520F /* StrikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F42455D73300B0520F /* StrikesViewController.swift */; };
+		88C7A6F72455D74C00B0520F /* AddComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F62455D74C00B0520F /* AddComboViewController.swift */; };
+		88C7A6F92455D77800B0520F /* BrowseVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F82455D77800B0520F /* BrowseVideosViewController.swift */; };
+		88C7A6FB2455D78800B0520F /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6FA2455D78800B0520F /* PlayVideoViewController.swift */; };
+		88F0445D245605D9003C9381 /* Strikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0445C245605D9003C9381 /* Strikes.swift */; };
+		88F0445F245893CE003C9381 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0445E245893CE003C9381 /* DataController.swift */; };
+		88F0446124589C10003C9381 /* CombinationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0446024589C10003C9381 /* CombinationsCell.swift */; };
+		88F822CE245A0BD600C61FB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */; };
+		88F822D2245A163500C61FB5 /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D1245A163500C61FB5 /* ForumViewController.swift */; };
+		88F822D5245B705400C61FB5 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D4245B705400C61FB5 /* Messages.swift */; };
+		88F822D7245B717400C61FB5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D6245B717400C61FB5 /* User.swift */; };
+		88F822D9245B743C00C61FB5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D8245B743C00C61FB5 /* SampleData.swift */; };
+		88F822DA245B766500C61FB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F822D0245A138400C61FB5 /* Main.storyboard */; };
+		88F822DC245D8A3400C61FB5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DB245D8A3400C61FB5 /* LoginViewController.swift */; };
+		88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DD245DA35400C61FB5 /* SignUpViewController.swift */; };
+		C2DA1D724D79AE64D481299D /* Pods_MuayThaiNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88C7A6D42455C09300B0520F /* MuayThaiNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuayThaiNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88C7A6D92455C09300B0520F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuayThaiNotes.xcdatamodel; sourceTree = "<group>"; };
+		88C7A6E32455C09C00B0520F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88C7A6E62455C09C00B0520F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88C7A6E82455C09C00B0520F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88C7A6F22455D72800B0520F /* CombinationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsViewController.swift; sourceTree = "<group>"; };
+		88C7A6F42455D73300B0520F /* StrikesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikesViewController.swift; sourceTree = "<group>"; };
+		88C7A6F62455D74C00B0520F /* AddComboViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComboViewController.swift; sourceTree = "<group>"; };
+		88C7A6F82455D77800B0520F /* BrowseVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseVideosViewController.swift; sourceTree = "<group>"; };
+		88C7A6FA2455D78800B0520F /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
+		88F0445C245605D9003C9381 /* Strikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strikes.swift; sourceTree = "<group>"; };
+		88F0445E245893CE003C9381 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		88F0446024589C10003C9381 /* CombinationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsCell.swift; sourceTree = "<group>"; };
+		88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		88F822D0245A138400C61FB5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = /Users/aiman.nabeel/Documents/SumairZamir/MuayThaiNotes/MuayThaiNotes/Assets/Main.storyboard; sourceTree = "<absolute>"; };
+		88F822D1245A163500C61FB5 /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
+		88F822D4245B705400C61FB5 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		88F822D6245B717400C61FB5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		88F822D8245B743C00C61FB5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		88F822DB245D8A3400C61FB5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		88F822DD245DA35400C61FB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BA10475C09A0BB3F4A09CD7F /* Pods-MuayThaiNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuayThaiNotes.release.xcconfig"; path = "Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes.release.xcconfig"; sourceTree = "<group>"; };
+		C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuayThaiNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E012C65457B63A00CF934BD8 /* Pods-MuayThaiNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuayThaiNotes.debug.xcconfig"; path = "Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88C7A6D12455C09300B0520F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2DA1D724D79AE64D481299D /* Pods_MuayThaiNotes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E16167A66BF32FCD6913304 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C485D22A7EAB24E5DA189342 /* Pods_MuayThaiNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88C7A6CB2455C09300B0520F = {
+			isa = PBXGroup;
+			children = (
+				88C7A6D62455C09300B0520F /* MuayThaiNotes */,
+				88C7A6D52455C09300B0520F /* Products */,
+				EAFFB39F8A07A2A8F3CA0C30 /* Pods */,
+				3E16167A66BF32FCD6913304 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		88C7A6D52455C09300B0520F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88C7A6D42455C09300B0520F /* MuayThaiNotes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88C7A6D62455C09300B0520F /* MuayThaiNotes */ = {
+			isa = PBXGroup;
+			children = (
+				88C7A6D72455C09300B0520F /* AppDelegate.swift */,
+				88C7A6D92455C09300B0520F /* SceneDelegate.swift */,
+				88C7A6E82455C09C00B0520F /* Info.plist */,
+				88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */,
+				88C7A6EE2455C0A800B0520F /* Model */,
+				88C7A6EF2455C0AD00B0520F /* View */,
+				88C7A6F02455C0B100B0520F /* Controller */,
+				88C7A6F12455C0CC00B0520F /* Assets */,
+			);
+			path = MuayThaiNotes;
+			sourceTree = "<group>";
+		};
+		88C7A6EE2455C0A800B0520F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */,
+				88F0445E245893CE003C9381 /* DataController.swift */,
+				88F822D4245B705400C61FB5 /* Messages.swift */,
+				88F822D6245B717400C61FB5 /* User.swift */,
+				88F0445C245605D9003C9381 /* Strikes.swift */,
+				88F822D8245B743C00C61FB5 /* SampleData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88C7A6EF2455C0AD00B0520F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88F0446024589C10003C9381 /* CombinationsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88C7A6F02455C0B100B0520F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88C7A6F22455D72800B0520F /* CombinationsViewController.swift */,
+				88C7A6F42455D73300B0520F /* StrikesViewController.swift */,
+				88C7A6F62455D74C00B0520F /* AddComboViewController.swift */,
+				88C7A6F82455D77800B0520F /* BrowseVideosViewController.swift */,
+				88C7A6FA2455D78800B0520F /* PlayVideoViewController.swift */,
+				88F822D1245A163500C61FB5 /* ForumViewController.swift */,
+				88F822DB245D8A3400C61FB5 /* LoginViewController.swift */,
+				88F822DD245DA35400C61FB5 /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		88C7A6F12455C0CC00B0520F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				88C7A6E32455C09C00B0520F /* Assets.xcassets */,
+				88F822D0245A138400C61FB5 /* Main.storyboard */,
+				88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EAFFB39F8A07A2A8F3CA0C30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E012C65457B63A00CF934BD8 /* Pods-MuayThaiNotes.debug.xcconfig */,
+				BA10475C09A0BB3F4A09CD7F /* Pods-MuayThaiNotes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88C7A6D32455C09300B0520F /* MuayThaiNotes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "MuayThaiNotes" */;
+			buildPhases = (
+				CC0C70ABC503D664A94CD3C9 /* [CP] Check Pods Manifest.lock */,
+				88C7A6D02455C09300B0520F /* Sources */,
+				88C7A6D12455C09300B0520F /* Frameworks */,
+				88C7A6D22455C09300B0520F /* Resources */,
+				2A27FFF678152C51AB75F9E8 /* [CP] Embed Pods Frameworks */,
+				8114033E6AB91F8E3C2C796A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuayThaiNotes;
+			productName = MuayThaiNotes;
+			productReference = 88C7A6D42455C09300B0520F /* MuayThaiNotes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88C7A6CC2455C09300B0520F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Sumair Zamir";
+				TargetAttributes = {
+					88C7A6D32455C09300B0520F = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "Chatter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88C7A6CB2455C09300B0520F;
+			productRefGroup = 88C7A6D52455C09300B0520F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88C7A6D32455C09300B0520F /* MuayThaiNotes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88C7A6D22455C09300B0520F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C7A6E72455C09C00B0520F /* LaunchScreen.storyboard in Resources */,
+				88F822CE245A0BD600C61FB5 /* GoogleService-Info.plist in Resources */,
+				88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */,
+				88F822DA245B766500C61FB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A27FFF678152C51AB75F9E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8114033E6AB91F8E3C2C796A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuayThaiNotes/Pods-MuayThaiNotes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC0C70ABC503D664A94CD3C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MuayThaiNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88C7A6D02455C09300B0520F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88C7A6F52455D73300B0520F /* StrikesViewController.swift in Sources */,
+				88C7A6F32455D72800B0520F /* CombinationsViewController.swift in Sources */,
+				88C7A6E22455C09400B0520F /* MuayThaiNotes.xcdatamodeld in Sources */,
+				88F0446124589C10003C9381 /* CombinationsCell.swift in Sources */,
+				88C7A6F72455D74C00B0520F /* AddComboViewController.swift in Sources */,
+				88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */,
+				88C7A6FB2455D78800B0520F /* PlayVideoViewController.swift in Sources */,
+				88F822D7245B717400C61FB5 /* User.swift in Sources */,
+				88F822D5245B705400C61FB5 /* Messages.swift in Sources */,
+				88F0445F245893CE003C9381 /* DataController.swift in Sources */,
+				88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */,
+				88F822D2245A163500C61FB5 /* ForumViewController.swift in Sources */,
+				88C7A6F92455D77800B0520F /* BrowseVideosViewController.swift in Sources */,
+				88F822DC245D8A3400C61FB5 /* LoginViewController.swift in Sources */,
+				88F0445D245605D9003C9381 /* Strikes.swift in Sources */,
+				88F822D9245B743C00C61FB5 /* SampleData.swift in Sources */,
+				88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88C7A6E62455C09C00B0520F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88C7A6E92455C09C00B0520F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		88C7A6EA2455C09C00B0520F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88C7A6EC2455C09C00B0520F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E012C65457B63A00CF934BD8 /* Pods-MuayThaiNotes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AMAMNTQA2;
+				INFOPLIST_FILE = MuayThaiNotes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.MuayThaiNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88C7A6ED2455C09C00B0520F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA10475C09A0BB3F4A09CD7F /* Pods-MuayThaiNotes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AMAMNTQA2;
+				INFOPLIST_FILE = MuayThaiNotes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.MuayThaiNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "Chatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C7A6E92455C09C00B0520F /* Debug */,
+				88C7A6EA2455C09C00B0520F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "MuayThaiNotes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88C7A6EC2455C09C00B0520F /* Debug */,
+				88C7A6ED2455C09C00B0520F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		88C7A6E02455C09400B0520F /* MuayThaiNotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */,
+			);
+			currentVersion = 88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */;
+			path = MuayThaiNotes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 88C7A6CC2455C09300B0520F /* Project object */;
+}

@@ -11,16 +11,9 @@
 		8844BACD246091140065C34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8844BACC246091140065C34E /* Main.storyboard */; };
 		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
 		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
-		88C7A6E22455C09400B0520F /* Chatter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6E02455C09400B0520F /* Chatter.xcdatamodeld */; };
 		88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E32455C09C00B0520F /* Assets.xcassets */; };
 		88C7A6E72455C09C00B0520F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */; };
-		88C7A6F32455D72800B0520F /* CombinationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F22455D72800B0520F /* CombinationsViewController.swift */; };
-		88C7A6F52455D73300B0520F /* StrikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F42455D73300B0520F /* StrikesViewController.swift */; };
-		88C7A6F72455D74C00B0520F /* AddComboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F62455D74C00B0520F /* AddComboViewController.swift */; };
-		88C7A6F92455D77800B0520F /* BrowseVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6F82455D77800B0520F /* BrowseVideosViewController.swift */; };
-		88C7A6FB2455D78800B0520F /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6FA2455D78800B0520F /* PlayVideoViewController.swift */; };
 		88F0445D245605D9003C9381 /* Strikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0445C245605D9003C9381 /* Strikes.swift */; };
-		88F0445F245893CE003C9381 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0445E245893CE003C9381 /* DataController.swift */; };
 		88F0446124589C10003C9381 /* CombinationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F0446024589C10003C9381 /* CombinationsCell.swift */; };
 		88F822CE245A0BD600C61FB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */; };
 		88F822D2245A163500C61FB5 /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822D1245A163500C61FB5 /* ForumViewController.swift */; };
@@ -37,17 +30,10 @@
 		88C7A6D42455C09300B0520F /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C7A6D92455C09300B0520F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuayThaiNotes.xcdatamodel; sourceTree = "<group>"; };
 		88C7A6E32455C09C00B0520F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88C7A6E62455C09C00B0520F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88C7A6E82455C09C00B0520F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88C7A6F22455D72800B0520F /* CombinationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsViewController.swift; sourceTree = "<group>"; };
-		88C7A6F42455D73300B0520F /* StrikesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikesViewController.swift; sourceTree = "<group>"; };
-		88C7A6F62455D74C00B0520F /* AddComboViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddComboViewController.swift; sourceTree = "<group>"; };
-		88C7A6F82455D77800B0520F /* BrowseVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseVideosViewController.swift; sourceTree = "<group>"; };
-		88C7A6FA2455D78800B0520F /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 		88F0445C245605D9003C9381 /* Strikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strikes.swift; sourceTree = "<group>"; };
-		88F0445E245893CE003C9381 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		88F0446024589C10003C9381 /* CombinationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationsCell.swift; sourceTree = "<group>"; };
 		88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88F822D1245A163500C61FB5 /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +94,6 @@
 		88C7A6EE2455C0A800B0520F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				88C7A6E02455C09400B0520F /* Chatter.xcdatamodeld */,
-				88F0445E245893CE003C9381 /* DataController.swift */,
 				88F822D4245B705400C61FB5 /* Messages.swift */,
 				88F822D6245B717400C61FB5 /* User.swift */,
 				88F0445C245605D9003C9381 /* Strikes.swift */,
@@ -129,11 +113,6 @@
 		88C7A6F02455C0B100B0520F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				88C7A6F22455D72800B0520F /* CombinationsViewController.swift */,
-				88C7A6F42455D73300B0520F /* StrikesViewController.swift */,
-				88C7A6F62455D74C00B0520F /* AddComboViewController.swift */,
-				88C7A6F82455D77800B0520F /* BrowseVideosViewController.swift */,
-				88C7A6FA2455D78800B0520F /* PlayVideoViewController.swift */,
 				88F822D1245A163500C61FB5 /* ForumViewController.swift */,
 				88F822DB245D8A3400C61FB5 /* LoginViewController.swift */,
 				88F822DD245DA35400C61FB5 /* SignUpViewController.swift */,
@@ -284,19 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88C7A6F52455D73300B0520F /* StrikesViewController.swift in Sources */,
-				88C7A6F32455D72800B0520F /* CombinationsViewController.swift in Sources */,
-				88C7A6E22455C09400B0520F /* Chatter.xcdatamodeld in Sources */,
 				88F0446124589C10003C9381 /* CombinationsCell.swift in Sources */,
-				88C7A6F72455D74C00B0520F /* AddComboViewController.swift in Sources */,
 				88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */,
-				88C7A6FB2455D78800B0520F /* PlayVideoViewController.swift in Sources */,
 				88F822D7245B717400C61FB5 /* User.swift in Sources */,
 				88F822D5245B705400C61FB5 /* Messages.swift in Sources */,
-				88F0445F245893CE003C9381 /* DataController.swift in Sources */,
 				88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */,
 				88F822D2245A163500C61FB5 /* ForumViewController.swift in Sources */,
-				88C7A6F92455D77800B0520F /* BrowseVideosViewController.swift in Sources */,
 				88F822DC245D8A3400C61FB5 /* LoginViewController.swift in Sources */,
 				88F0445D245605D9003C9381 /* Strikes.swift in Sources */,
 				88F822D9245B743C00C61FB5 /* SampleData.swift in Sources */,
@@ -492,19 +464,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		88C7A6E02455C09400B0520F /* Chatter.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */,
-			);
-			currentVersion = 88C7A6E12455C09400B0520F /* MuayThaiNotes.xcdatamodel */;
-			path = Chatter.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 88C7A6CC2455C09300B0520F /* Project object */;
 }
