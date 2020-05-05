@@ -32,6 +32,8 @@ class LoginViewController: UIViewController {
         
     }
     
+    // Add progress/view + error text field
+    
     
     @IBAction func loginTapped(_ sender: Any) {
         

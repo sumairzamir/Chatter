@@ -7,7 +7,7 @@
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.631343907765-mt1bq8g5umnc5gj1t4vkfrvbp9263ve1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDfBJZLUUpMKrpLAgn_jtef2NG_VH1KmxM</string>
+	<string>xxx</string>
 	<key>GCM_SENDER_ID</key>
 	<string>631343907765</string>
 	<key>PLIST_VERSION</key>
@@ -19,15 +19,15 @@
 	<key>STORAGE_BUCKET</key>
 	<string>muaythainotes.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:631343907765:ios:38ab35dc1b893977654ffc</string>
 	<key>DATABASE_URL</key>

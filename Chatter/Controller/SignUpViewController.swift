@@ -24,6 +24,9 @@ class SignUpViewController: UIViewController {
         
     }
     
+    
+    // Add progress/view + error text field
+    
     func configureUI() {
         
         Style.styleTextField(displayNameTextField)

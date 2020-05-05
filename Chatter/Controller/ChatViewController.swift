@@ -16,6 +16,8 @@ import InputBarAccessoryView
 
 class ChatViewController: MessagesViewController {
     
+    // Use messageKit to update, remove avatar & read receipts?
+    
     var messages: [Message] = []
     
     var currentUserUid = Auth.auth().currentUser?.uid
