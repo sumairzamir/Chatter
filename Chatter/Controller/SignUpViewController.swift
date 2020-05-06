@@ -6,7 +6,6 @@
 //  Copyright © 2020 Sumair Zamir. All rights reserved.
 //  Comment
 
-import Foundation
 import UIKit
 import FirebaseAuth
 import Firebase
@@ -21,54 +20,34 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
     }
     
-    
-    // Add progress/view + error text field
-    
     func configureUI() {
-        
         Style.styleTextField(displayNameTextField)
         Style.styleTextField(emailTextField)
         Style.styleTextField(passwordTextField)
         Style.styleButtonBlue(signUpButton)
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
-        
-
         let displayName = displayNameTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
-        
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            
             if let error = error {
-                
                 print("error creating user \(error.localizedDescription)")
-                
             } else {
-                
                 let db = Firestore.firestore()
-                
                 db.collection("users").addDocument(data: ["displayName": displayName, "uid": result!.user.uid]) { (error) in
-                    
                     if error != nil {
                         print("error after firestore \(error!.localizedDescription)")
                     }
-                    
                     self.performSegue(withIdentifier: "ChatViewController", sender: nil)
-                    
                 }
-                
             }
-            
         }
-        
     }
-    
     
 }

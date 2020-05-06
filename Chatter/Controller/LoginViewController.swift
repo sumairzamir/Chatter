@@ -6,7 +6,6 @@
 //  Copyright © 2020 Sumair Zamir. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Firebase
 
@@ -20,41 +19,31 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func configureUI() {
-        
         Style.styleTextField(emailTextField)
         Style.styleTextField(passwordTextField)
         Style.styleButtonBlue(loginButton)
         Style.styleButtonHollow(registerButton)
-        
     }
     
-    // Add progress/view + error text field
-    
-    
     @IBAction func loginTapped(_ sender: Any) {
-        
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
                 print(error!.localizedDescription)
-                
             } else {
-
                 self.performSegue(withIdentifier: "ChatViewController", sender: nil)
             }
-            
-            
         }
-        
-        
     }
-    
-    
     
 }
