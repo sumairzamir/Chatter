@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var registerActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,20 +35,37 @@ class SignUpViewController: UIViewController {
         let displayName = displayNameTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
+        setRegisterRequest(true)
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
-                print("error creating user \(error.localizedDescription)")
+                self.showLogicFailure(title: "Unable to create user", message: error.localizedDescription)
+                self.setRegisterRequest(false)
             } else {
                 let db = Firestore.firestore()
                 db.collection("users").addDocument(data: ["displayName": displayName, "uid": result!.user.uid]) { (error) in
                     if error != nil {
-                        print("error after firestore \(error!.localizedDescription)")
+                        self.showLogicFailure(title: "Unable to create user", message: error?.localizedDescription ?? "")
+                        self.setRegisterRequest(false)
                     }
                     self.performSegue(withIdentifier: "ChatViewController", sender: nil)
+                    self.setRegisterRequest(false)
                 }
             }
         }
+    }
+
+    func setRegisterRequest(_ logginIn: Bool) {
+        if logginIn {
+            registerActivityIndicator.startAnimating()
+        } else {
+            registerActivityIndicator.stopAnimating()
+        }
+        
+        displayNameTextField.isEnabled = !logginIn
+        emailTextField.isEnabled = !logginIn
+        passwordTextField.isEnabled = !logginIn
+        signUpButton.isEnabled = !logginIn
     }
     
 }

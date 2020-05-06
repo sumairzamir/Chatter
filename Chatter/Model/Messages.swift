@@ -9,13 +9,6 @@
 import Foundation
 import Firebase
 import MessageKit
-//
-//protocol DatabaseStructure {
-//
-//    // what does get mean?
-//    var structure: [String: Any] { get }
-//
-//}
 
 struct Message: MessageType {
     
@@ -30,12 +23,10 @@ struct Message: MessageType {
     var user: User
     
     init(kind: MessageKind, user: User, messageId: String, date: Date) {
-        
         self.kind = kind
         self.user = user
         self.messageId = messageId
         self.sentDate = date
-        
     }
     
      init(text: String, user: User, messageId: String, date: Date) {
@@ -46,23 +37,3 @@ struct Message: MessageType {
            self.init(kind: .custom(custom), user: user, messageId: messageId, date: date)
        }
 }
-//
-//extension Message: DatabaseStructure {
-//
-//    var structure: [String : Any] {
-//        var struc: [String: Any] = [
-//
-//            "messageId": messageId,
-//            "sentDate": sentDate,
-//            "text": kind,
-//            "user": user
-//
-//        ]
-//
-//        return struc
-//    }
-//
-//
-
-    
-//}

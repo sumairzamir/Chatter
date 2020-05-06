@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +37,40 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         let email = emailTextField.text!
         let password = passwordTextField.text!
+        setLoggingIn(true)
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
-                print(error!.localizedDescription)
+                self.showLogicFailure(title: "Login failed", message: error?.localizedDescription ?? "")
+                self.setLoggingIn(false)
             } else {
                 self.performSegue(withIdentifier: "ChatViewController", sender: nil)
+                self.setLoggingIn(false)
             }
         }
     }
     
+    func setLoggingIn(_ logginIn: Bool) {
+        if logginIn {
+            loginActivityIndicator.startAnimating()
+        } else {
+            loginActivityIndicator.stopAnimating()
+        }
+        
+        emailTextField.isEnabled = !logginIn
+        passwordTextField.isEnabled = !logginIn
+        loginButton.isEnabled = !logginIn
+        registerButton.isEnabled = !logginIn
+    }
+    
+}
+
+extension UIViewController {
+
+    func showLogicFailure(title: String, message: String) {
+           let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+           self.present(alert, animated: true, completion: nil)
+     }
+
 }

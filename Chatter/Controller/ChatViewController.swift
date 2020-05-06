@@ -171,7 +171,6 @@ extension ChatViewController: MessagesDisplayDelegate {
         return .bubbleTail(corner, .curved)
     }
     
-    
 }
 
 extension ChatViewController: InputBarAccessoryViewDelegate {

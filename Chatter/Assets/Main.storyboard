@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1xu-lf-czx">
-                                <rect key="frame" x="20" y="354" width="374" height="188"/>
+                                <rect key="frame" x="20" y="334" width="374" height="228"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3@3.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-QU-2NB">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -58,6 +58,9 @@
                                             <segue destination="HQo-iA-yxS" kind="show" id="1Et-O1-qNQ"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="M4F-sE-AHg">
+                                        <rect key="frame" x="0.0" y="208" width="374" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -73,6 +76,7 @@
                     <navigationItem key="navigationItem" id="iRj-LU-UIH"/>
                     <connections>
                         <outlet property="emailTextField" destination="aXA-QU-2NB" id="PCz-eN-JPc"/>
+                        <outlet property="loginActivityIndicator" destination="M4F-sE-AHg" id="l1W-Q1-XR2"/>
                         <outlet property="loginButton" destination="lGs-X8-cQd" id="Qbq-6i-ExO"/>
                         <outlet property="passwordTextField" destination="zqT-9t-Cao" id="9Da-KR-RHF"/>
                         <outlet property="registerButton" destination="C0W-iC-25a" id="wgZ-83-Q8k"/>
@@ -92,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-FP-dNC">
-                                <rect key="frame" x="20" y="108" width="374" height="222"/>
+                                <rect key="frame" x="20" y="108" width="374" height="272"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOl-Ci-mKO">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -116,6 +120,9 @@
                                             <action selector="signUpTapped:" destination="HQo-iA-yxS" eventType="touchUpInside" id="Fbd-LM-yF8"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kOi-xT-PvK">
+                                        <rect key="frame" x="0.0" y="252" width="374" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -133,6 +140,7 @@
                         <outlet property="displayNameTextField" destination="BOl-Ci-mKO" id="zIz-7W-5e5"/>
                         <outlet property="emailTextField" destination="MxI-xW-mJt" id="gIc-yl-O8K"/>
                         <outlet property="passwordTextField" destination="18J-sS-BLc" id="YEd-iY-Lex"/>
+                        <outlet property="registerActivityIndicator" destination="kOi-xT-PvK" id="qUt-PO-g7v"/>
                         <outlet property="signUpButton" destination="T4k-Zj-LeP" id="IJT-b7-Wye"/>
                         <segue destination="D0g-Ki-nuO" kind="show" identifier="ChatViewController" id="ZMC-Dc-9CE"/>
                     </connections>
@@ -168,6 +176,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UJn-Ly-qga"/>
+        <segue reference="ZMC-Dc-9CE"/>
     </inferredMetricsTieBreakers>
 </document>
