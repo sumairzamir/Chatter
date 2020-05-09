@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1xu-lf-czx">
-                                <rect key="frame" x="20" y="334" width="374" height="228"/>
+                                <rect key="frame" x="20" y="354" width="374" height="188"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3@3.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXA-QU-2NB">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -58,23 +58,36 @@
                                             <segue destination="HQo-iA-yxS" kind="show" id="1Et-O1-qNQ"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="M4F-sE-AHg">
-                                        <rect key="frame" x="0.0" y="208" width="374" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="M4F-sE-AHg">
+                                <rect key="frame" x="197" y="562" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oM0-r0-T6e">
+                                <rect key="frame" x="132" y="151" width="150" height="150"/>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Jdt-le-O7J"/>
+                                    <constraint firstAttribute="height" constant="151.33333333333331" id="kQK-Tw-ce4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerY" secondItem="hee-SC-uaW" secondAttribute="centerY" id="2S9-VJ-3QI"/>
+                            <constraint firstItem="oM0-r0-T6e" firstAttribute="top" secondItem="hee-SC-uaW" secondAttribute="top" constant="150" id="DbJ-Hv-HvQ"/>
+                            <constraint firstItem="M4F-sE-AHg" firstAttribute="top" secondItem="1xu-lf-czx" secondAttribute="bottom" constant="20" id="GgC-ca-ZSq"/>
+                            <constraint firstItem="M4F-sE-AHg" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="IJC-Me-zBk"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="20" id="QiX-BW-Cbf"/>
                             <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="1xu-lf-czx" secondAttribute="trailing" constant="20" id="QyK-qq-dY6"/>
+                            <constraint firstItem="oM0-r0-T6e" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="gXK-ll-6Us"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="rVS-LV-iXQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWM-BM-KCw"/>
                     </view>
                     <navigationItem key="navigationItem" id="iRj-LU-UIH"/>
                     <connections>
+                        <outlet property="chatterLogo" destination="oM0-r0-T6e" id="UDb-x3-orH"/>
                         <outlet property="emailTextField" destination="aXA-QU-2NB" id="PCz-eN-JPc"/>
                         <outlet property="loginActivityIndicator" destination="M4F-sE-AHg" id="l1W-Q1-XR2"/>
                         <outlet property="loginButton" destination="lGs-X8-cQd" id="Qbq-6i-ExO"/>
@@ -96,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-FP-dNC">
-                                <rect key="frame" x="20" y="108" width="374" height="272"/>
+                                <rect key="frame" x="20" y="108" width="374" height="222"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOl-Ci-mKO">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -120,11 +133,11 @@
                                             <action selector="signUpTapped:" destination="HQo-iA-yxS" eventType="touchUpInside" id="Fbd-LM-yF8"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kOi-xT-PvK">
-                                        <rect key="frame" x="0.0" y="252" width="374" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kOi-xT-PvK">
+                                <rect key="frame" x="197" y="350" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -132,6 +145,8 @@
                             <constraint firstItem="eyB-pL-amQ" firstAttribute="trailing" secondItem="nFO-FP-dNC" secondAttribute="trailing" constant="20" id="H9h-yz-dE1"/>
                             <constraint firstItem="nFO-FP-dNC" firstAttribute="leading" secondItem="eyB-pL-amQ" secondAttribute="leading" constant="20" id="IWs-2H-nE0"/>
                             <constraint firstItem="nFO-FP-dNC" firstAttribute="top" secondItem="eyB-pL-amQ" secondAttribute="top" constant="20" id="SjL-1I-lmC"/>
+                            <constraint firstItem="kOi-xT-PvK" firstAttribute="top" secondItem="nFO-FP-dNC" secondAttribute="bottom" constant="20" id="jQ8-b5-ghn"/>
+                            <constraint firstItem="kOi-xT-PvK" firstAttribute="centerX" secondItem="elA-Wp-9i4" secondAttribute="centerX" id="wHz-gq-Dfo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eyB-pL-amQ"/>
                     </view>
@@ -156,7 +171,28 @@
                     <view key="view" contentMode="scaleToFill" id="qCe-bb-ML5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HiP-BA-C7H">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1mi-pn-nT8">
+                                        <rect key="frame" x="188.66666666666666" y="385.66666666666669" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="1mi-pn-nT8" firstAttribute="centerX" secondItem="HiP-BA-C7H" secondAttribute="centerX" id="7Zd-z8-uyu"/>
+                                    <constraint firstItem="1mi-pn-nT8" firstAttribute="centerY" secondItem="HiP-BA-C7H" secondAttribute="centerY" id="i8D-A1-ajO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HiP-BA-C7H" firstAttribute="top" secondItem="WVH-La-fhD" secondAttribute="top" id="02K-Jo-LDp"/>
+                            <constraint firstAttribute="bottom" secondItem="HiP-BA-C7H" secondAttribute="bottom" id="N3R-KF-rWT"/>
+                            <constraint firstItem="HiP-BA-C7H" firstAttribute="leading" secondItem="WVH-La-fhD" secondAttribute="leading" id="caX-kq-QZd"/>
+                            <constraint firstItem="HiP-BA-C7H" firstAttribute="centerX" secondItem="qCe-bb-ML5" secondAttribute="centerX" id="vEh-yK-vUD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WVH-La-fhD"/>
                     </view>
                     <navigationItem key="navigationItem" id="69G-uc-QYk">
@@ -167,7 +203,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="chatLoadingIndicator" destination="1mi-pn-nT8" id="HPy-ld-39y"/>
                         <outlet property="logoutButton" destination="S6l-6s-iCW" id="iXg-b7-hiP"/>
+                        <outlet property="parentView" destination="qCe-bb-ML5" id="pwc-sM-sG7"/>
+                        <outlet property="subView" destination="HiP-BA-C7H" id="s9b-Ou-YaT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFa-4o-4eU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,6 +215,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZMC-Dc-9CE"/>
+        <segue reference="UJn-Ly-qga"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="message.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

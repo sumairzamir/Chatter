@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71F5F4D03B59D33EC21F532A /* Pods_Chatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AF9C0DDAFB58DD0196703B /* Pods_Chatter.framework */; };
 		88079AD92461CC3F00E1A9EA /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88079AD82461CC3F00E1A9EA /* Style.swift */; };
+		88079ADB246357B000E1A9EA /* NetworkLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88079ADA246357B000E1A9EA /* NetworkLogic.swift */; };
 		8844BACD246091140065C34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8844BACC246091140065C34E /* Main.storyboard */; };
 		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
 		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		6D1A01F5988B73C12E00ABAC /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
 		88079AD82461CC3F00E1A9EA /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		88079ADA246357B000E1A9EA /* NetworkLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogic.swift; sourceTree = "<group>"; };
 		8844BACC246091140065C34E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		88C7A6D42455C09300B0520F /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		88C7A6EE2455C0A800B0520F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				88079ADA246357B000E1A9EA /* NetworkLogic.swift */,
 				88F822D4245B705400C61FB5 /* Messages.swift */,
 				88F822D6245B717400C61FB5 /* User.swift */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */,
+				88079ADB246357B000E1A9EA /* NetworkLogic.swift in Sources */,
 				88F822D7245B717400C61FB5 /* User.swift in Sources */,
 				88F822D5245B705400C61FB5 /* Messages.swift in Sources */,
 				88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */,

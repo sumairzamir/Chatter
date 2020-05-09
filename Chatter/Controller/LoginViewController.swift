@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var chatterLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+//        NetworkLogic.detachListener = false
     }
     
     func configureUI() {
@@ -32,6 +34,7 @@ class LoginViewController: UIViewController {
         Style.styleTextField(passwordTextField)
         Style.styleButtonBlue(loginButton)
         Style.styleButtonHollow(registerButton)
+        chatterLogo.image?.withTintColor(.white, renderingMode: .alwaysTemplate)
     }
     
     @IBAction func loginTapped(_ sender: Any) {

@@ -11,13 +11,7 @@ import MessageKit
 import Firebase
 import InputBarAccessoryView
 
-// Add keyboard management
-
 class ChatViewController: MessagesViewController {
-    
-    var messages: [Message] = []
-    var currentUserUid = Auth.auth().currentUser?.uid
-    var currentDisplayName = ""
     
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -25,7 +19,12 @@ class ChatViewController: MessagesViewController {
         return formatter
     }()
     
+    var chatListener: ListenerRegistration?
+    
+    @IBOutlet var parentView: UIView!
+    @IBOutlet weak var subView: UIView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var chatLoadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,41 +37,52 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
         
+        scrollsToBottomOnKeyboardBeginsEditing = true
+        maintainPositionOnKeyboardFrameChanged = true
+        
+        parentView.bringSubviewToFront(subView)
+        
+        subView.alpha = 0.5
+        subView.isHidden = false
+        
         let settings = FirestoreSettings()
         
         // Add offline persistence
         settings.isPersistenceEnabled = true
-        let db = Firestore.firestore()
-        db.settings = settings
+        NetworkLogic.db.settings = settings
         
-        let dbMessages = Firestore.firestore().collection("messages")
-        // Try empty the array instead of the metadata adjustment?
-        dbMessages.addSnapshotListener { (snapshot, error) in
-            guard let snapshot = snapshot else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            let changesData = snapshot.documentChanges
-            let source = snapshot.metadata.hasPendingWrites
-            if source == false {
-                for changes in changesData {
-                    let user = changes.document.data()["user"] as! String
-                    let messageId = changes.document.data()["messageId"] as! String
-                    let text = changes.document.data()["text"] as! String
-                    let timestamp = changes.document.data()["sentDate"] as! Timestamp
-                    let userId = changes.document.data()["userId"] as! String
-                    
-                    let date = timestamp.dateValue()
-                    
-                    let userData = User(senderId: userId, displayName: user)
-                    let message = Message(text: text, user: userData, messageId: messageId, date: date)
-                    
-                    self.messages.append(message)
-                    self.messagesCollectionView.reloadData()
-                    self.messagesCollectionView.scrollToBottom(animated: true)
-                }
-            }
+        chatLoadingIndicator.startAnimating()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkLogic.getCurrentUserData(completionHandler: handleUserData(success:error:))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        chatListener!.remove()
+    }
+    
+    func handleUserData(success: Bool, error: Error?) {
+        if success {
+            chatListener = NetworkLogic.getMessageUpdates(completionHandler: handleMessageData(success:error:))
+        } else {
+            showLogicFailure(title: "Network error", message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func handleMessageData(success: Bool, error: Error?) {
+        if success {
+            messagesCollectionView.reloadData()
+            // scroll to bottom is jittery for some reason...
+            //            messagesCollectionView.scrollTobo
+            messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: NetworkLogic.messages.count - 1), at: .top, animated: false)
+            chatLoadingIndicator.stopAnimating()
+            subView.isHidden = true
+        } else {
+            showLogicFailure(title: "Unable to update", message: error?.localizedDescription ?? "")
         }
     }
     
@@ -85,35 +95,21 @@ class ChatViewController: MessagesViewController {
             print("Error signing out: %@", signOutError)
         }
     }
-    
 }
 
 extension ChatViewController: MessagesDataSource {
     
     func currentSender() -> SenderType {
-        let db = Firestore.firestore()
-        let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid!)
-        userQuery.getDocuments { (snapshot, error) in
-            guard let snapshot = snapshot else {
-                print(error!.localizedDescription)
-                return
-            }
-            let userData = snapshot.documents
-            for userDetails in userData {
-                let displayName = userDetails.data()["firstName"] as! String
-                self.currentDisplayName = displayName
-            }
-        }
-        let currentUser = User(senderId: currentUserUid!, displayName: currentDisplayName)
+        let currentUser = User(senderId: NetworkLogic.currentUserUid!, displayName: NetworkLogic.currentDisplayName)
         return currentUser
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return messages[indexPath.section]
+        return NetworkLogic.messages[indexPath.section]
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return messages.count
+        return NetworkLogic.messages.count
     }
     
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
@@ -162,7 +158,6 @@ extension ChatViewController: MessagesLayoutDelegate {
 extension ChatViewController: MessagesDisplayDelegate {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        // Understand the syntax here?
         return isFromCurrentSender(message: message) ? .systemBlue : .systemGray6
     }
     
@@ -184,25 +179,17 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
     func insertMessages(_ data: [Any]) {
         for component in data {
             if let str = component as? String {
-                let db = Firestore.firestore()
-                let userQuery = db.collection("users").whereField("uid", isEqualTo: currentUserUid!)
-                userQuery.getDocuments { (snapshot, error) in
-                    guard let snapshot = snapshot else {
-                        print(error!.localizedDescription)
-                        return
-                    }
-                    let userData = snapshot.documents
-                    for userDetails in userData {
-                        let displayName = userDetails.data()["firstName"] as! String
-                        let messageId = UUID().uuidString
-                        let sentDate = Date()
-                        
-                        db.collection("messages").addDocument(data: ["messageId": messageId, "sentDate": sentDate, "text": str, "user": displayName, "userId": self.currentUserUid!]) { (error) in
-                            if error != nil {
-                                print(error!.localizedDescription)
-                                self.messagesCollectionView.scrollToBottom(animated: true)
-                            }
-                        }
+                let messageId = UUID().uuidString
+                let sentDate = Date()
+                NetworkLogic.db.collection("messages").addDocument(data: [
+                    "messageId": messageId,
+                    "sentDate": sentDate,
+                    "text": str,
+                    "user": NetworkLogic.currentDisplayName,
+                    "userId": NetworkLogic.currentUserUid!
+                ]) { (error) in
+                    if error != nil {
+                        self.showLogicFailure(title: "Unable to insert message", message: error?.localizedDescription ?? "")
                     }
                 }
             }
