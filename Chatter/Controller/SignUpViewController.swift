@@ -23,18 +23,11 @@ class SignUpViewController: UIViewController {
         configureUI()
     }
     
-    func configureUI() {
-        Style.styleTextField(displayNameTextField)
-        Style.styleTextField(emailTextField)
-        Style.styleTextField(passwordTextField)
-        Style.styleButtonBlue(signUpButton)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     @IBAction func signUpTapped(_ sender: Any) {
         let displayName = displayNameTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
+        
         setRegisterRequest(true)
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
@@ -42,8 +35,7 @@ class SignUpViewController: UIViewController {
                 self.showLogicFailure(title: "Unable to create user", message: error.localizedDescription)
                 self.setRegisterRequest(false)
             } else {
-                let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["displayName": displayName, "uid": result!.user.uid]) { (error) in
+                NetworkParameters.db.collection("users").addDocument(data: ["displayName": displayName, "uid": result!.user.uid]) { (error) in
                     if error != nil {
                         self.showLogicFailure(title: "Unable to create user", message: error?.localizedDescription ?? "")
                         self.setRegisterRequest(false)
@@ -54,18 +46,25 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-
-    func setRegisterRequest(_ logginIn: Bool) {
-        if logginIn {
+    
+    func setRegisterRequest(_ registerRequest: Bool) {
+        if registerRequest {
             registerActivityIndicator.startAnimating()
         } else {
             registerActivityIndicator.stopAnimating()
         }
-        
-        displayNameTextField.isEnabled = !logginIn
-        emailTextField.isEnabled = !logginIn
-        passwordTextField.isEnabled = !logginIn
-        signUpButton.isEnabled = !logginIn
+        displayNameTextField.isEnabled = !registerRequest
+        emailTextField.isEnabled = !registerRequest
+        passwordTextField.isEnabled = !registerRequest
+        signUpButton.isEnabled = !registerRequest
+    }
+    
+    func configureUI() {
+        Style.styleTextField(displayNameTextField)
+        Style.styleTextField(emailTextField)
+        Style.styleTextField(passwordTextField)
+        Style.styleButtonBlue(signUpButton)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 }

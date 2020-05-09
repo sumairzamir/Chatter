@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sumair Zamir. All rights reserved.
 //
 
-// Post messages offline logic -> then complete!
-
 import UIKit
 import MessageKit
 import Firebase
@@ -16,44 +14,34 @@ import Network
 
 class ChatViewController: MessagesViewController {
     
+    let monitor = NWPathMonitor()
+    var chatListener: ListenerRegistration?
+    
     let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter
     }()
     
-    var chatListener: ListenerRegistration?
-    
-    let monitor = NWPathMonitor()
-    
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var chatLoadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var testInternet: UIBarButtonItem!
-    @IBOutlet weak var isConnectView: UIView!
-    @IBOutlet weak var isConnectLabel: UILabel!
     
+    // Testing method to remove
     @IBAction func tapTest(_ sender: Any) {
-    
-        if NetworkLogic.isConnected == true {
-            NetworkLogic.isConnected = false
-            print(NetworkLogic.isConnected)
-            parentView.bringSubviewToFront(isConnectView)
-            isConnectView.backgroundColor = .systemBlue
-            isConnectView.alpha = 0.75
-            isConnectView.isHidden = false
-        } else { NetworkLogic.isConnected = true
-            print(NetworkLogic.isConnected)
-            isConnectView.isHidden = true
+        if NetworkParameters.networkConnected == true {
+            NetworkParameters.networkConnected = false
+            print(NetworkParameters.networkConnected)
+        } else { NetworkParameters.networkConnected = true
+            print(NetworkParameters.networkConnected)
         }
-        
-        
-    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.setHidesBackButton(true, animated: false)
         navigationController?.setNavigationBarHidden(false, animated: true)
         title = "Chatter"
@@ -67,32 +55,28 @@ class ChatViewController: MessagesViewController {
         maintainPositionOnKeyboardFrameChanged = true
         
         parentView.bringSubviewToFront(subView)
-        
         subView.alpha = 0.5
         subView.isHidden = false
-        
-        let settings = FirestoreSettings()
-        
-        // Add offline persistence
-        settings.isPersistenceEnabled = true
-        NetworkLogic.db.settings = settings
-        
         chatLoadingIndicator.startAnimating()
         
-        // Factor into new method
-//
-//        monitor.pathUpdateHandler = { path in
-//            if path.status == .satisfied {
-//                NetworkLogic.isConnected = true
-//                print("connected")
-//            } else {
-//                NetworkLogic.isConnected = false
-//                print("disconnected")
-//            }
-//        }
-//
-//        let networkQueue = DispatchQueue(label: "Monitor")
-//        monitor.start(queue: networkQueue)
+        // Enable offline persistance - Move to networking classes
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
+        NetworkParameters.db.settings = settings
+      
+      // Move into its own method
+                monitor.pathUpdateHandler = { path in
+                    if path.status == .satisfied {
+                        NetworkParameters.networkConnected = true
+                        print("connected")
+                    } else {
+                        NetworkParameters.networkConnected = false
+                        print("disconnected")
+                    }
+                }
+        
+                let networkQueue = DispatchQueue(label: "Monitor")
+                monitor.start(queue: networkQueue)
         
     }
     
@@ -103,7 +87,7 @@ class ChatViewController: MessagesViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NetworkLogic.animated = false
+        NetworkParameters.scrollAnimated = false
         chatListener!.remove()
     }
     
@@ -118,9 +102,7 @@ class ChatViewController: MessagesViewController {
     func handleMessageData(success: Bool, error: Error?) {
         if success {
             messagesCollectionView.reloadData()
-            // scroll to bottom is jittery for some reason...
-            //            messagesCollectionView.scrollTobo
-            messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: NetworkLogic.messages.count - 1), at: .top, animated: NetworkLogic.animated)
+            messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: NetworkParameters.messages.count - 1), at: .top, animated: NetworkParameters.scrollAnimated)
             chatLoadingIndicator.stopAnimating()
             subView.isHidden = true
         } else {
@@ -142,16 +124,16 @@ class ChatViewController: MessagesViewController {
 extension ChatViewController: MessagesDataSource {
     
     func currentSender() -> SenderType {
-        let currentUser = User(senderId: NetworkLogic.currentUserUid!, displayName: NetworkLogic.currentDisplayName)
+        let currentUser = User(senderId: NetworkParameters.currentUserUid!, displayName: NetworkParameters.currentDisplayName)
         return currentUser
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return NetworkLogic.messages[indexPath.section]
+        return NetworkParameters.messages[indexPath.section]
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return NetworkLogic.messages.count
+        return NetworkParameters.messages.count
     }
     
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
@@ -159,10 +141,6 @@ extension ChatViewController: MessagesDataSource {
             return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         }
         return nil
-    }
-    
-    func cellBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        return NSAttributedString(string: "Read", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
     }
     
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
@@ -203,6 +181,10 @@ extension ChatViewController: MessagesDisplayDelegate {
         return isFromCurrentSender(message: message) ? .systemBlue : .systemGray6
     }
     
+    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? .white : .white
+    }
+    
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(corner, .curved)
@@ -223,13 +205,13 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             if let str = component as? String {
                 let messageId = UUID().uuidString
                 let sentDate = Date()
-                NetworkLogic.animated = true
-                NetworkLogic.db.collection("messages").addDocument(data: [
+                NetworkParameters.scrollAnimated = true
+                NetworkParameters.db.collection("messages").addDocument(data: [
                     "messageId": messageId,
                     "sentDate": sentDate,
                     "text": str,
-                    "user": NetworkLogic.currentDisplayName,
-                    "userId": NetworkLogic.currentUserUid!
+                    "user": NetworkParameters.currentDisplayName,
+                    "userId": NetworkParameters.currentUserUid!
                 ]) { (error) in
                     if error != nil {
                         self.showLogicFailure(title: "Unable to insert message", message: error?.localizedDescription ?? "")

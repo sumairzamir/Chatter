@@ -196,7 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="WVH-La-fhD"/>
                     </view>
                     <navigationItem key="navigationItem" id="69G-uc-QYk">
-                        <barButtonItem key="leftBarButtonItem" title="Test" id="87g-E5-hIc">
+                        <barButtonItem key="leftBarButtonItem" image="exclamationmark.icloud" catalog="system" id="87g-E5-hIc">
                             <connections>
                                 <action selector="tapTest:" destination="D0g-Ki-nuO" id="OKS-xv-JLe"/>
                             </connections>
@@ -224,6 +224,7 @@
         <segue reference="UJn-Ly-qga"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="exclamationmark.icloud" catalog="system" width="128" height="88"/>
         <image name="message.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

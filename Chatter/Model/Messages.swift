@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 import MessageKit
 
 struct Message: MessageType {
@@ -19,7 +18,6 @@ struct Message: MessageType {
     
     var sentDate: Date
     var kind: MessageKind
-    
     var user: User
     
     init(kind: MessageKind, user: User, messageId: String, date: Date) {
@@ -29,11 +27,12 @@ struct Message: MessageType {
         self.sentDate = date
     }
     
-     init(text: String, user: User, messageId: String, date: Date) {
-           self.init(kind: .text(text), user: user, messageId: messageId, date: date)
-       }
+    init(text: String, user: User, messageId: String, date: Date) {
+        self.init(kind: .text(text), user: user, messageId: messageId, date: date)
+    }
     
     init(custom: Any?, user: User, messageId: String, date: Date) {
-           self.init(kind: .custom(custom), user: user, messageId: messageId, date: date)
-       }
+        self.init(kind: .custom(custom), user: user, messageId: messageId, date: date)
+    }
+    
 }
