@@ -6,10 +6,13 @@
 //  Copyright © 2020 Sumair Zamir. All rights reserved.
 //
 
+// Post messages offline logic -> then complete!
+
 import UIKit
 import MessageKit
 import Firebase
 import InputBarAccessoryView
+import Network
 
 class ChatViewController: MessagesViewController {
     
@@ -21,10 +24,33 @@ class ChatViewController: MessagesViewController {
     
     var chatListener: ListenerRegistration?
     
+    let monitor = NWPathMonitor()
+    
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var chatLoadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var testInternet: UIBarButtonItem!
+    @IBOutlet weak var isConnectView: UIView!
+    @IBOutlet weak var isConnectLabel: UILabel!
+    
+    @IBAction func tapTest(_ sender: Any) {
+    
+        if NetworkLogic.isConnected == true {
+            NetworkLogic.isConnected = false
+            print(NetworkLogic.isConnected)
+            parentView.bringSubviewToFront(isConnectView)
+            isConnectView.backgroundColor = .systemBlue
+            isConnectView.alpha = 0.75
+            isConnectView.isHidden = false
+        } else { NetworkLogic.isConnected = true
+            print(NetworkLogic.isConnected)
+            isConnectView.isHidden = true
+        }
+        
+        
+    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +79,21 @@ class ChatViewController: MessagesViewController {
         
         chatLoadingIndicator.startAnimating()
         
+        // Factor into new method
+//
+//        monitor.pathUpdateHandler = { path in
+//            if path.status == .satisfied {
+//                NetworkLogic.isConnected = true
+//                print("connected")
+//            } else {
+//                NetworkLogic.isConnected = false
+//                print("disconnected")
+//            }
+//        }
+//
+//        let networkQueue = DispatchQueue(label: "Monitor")
+//        monitor.start(queue: networkQueue)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +103,7 @@ class ChatViewController: MessagesViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        NetworkLogic.animated = false
         chatListener!.remove()
     }
     
@@ -78,7 +120,7 @@ class ChatViewController: MessagesViewController {
             messagesCollectionView.reloadData()
             // scroll to bottom is jittery for some reason...
             //            messagesCollectionView.scrollTobo
-            messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: NetworkLogic.messages.count - 1), at: .top, animated: false)
+            messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: NetworkLogic.messages.count - 1), at: .top, animated: NetworkLogic.animated)
             chatLoadingIndicator.stopAnimating()
             subView.isHidden = true
         } else {
@@ -181,6 +223,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             if let str = component as? String {
                 let messageId = UUID().uuidString
                 let sentDate = Date()
+                NetworkLogic.animated = true
                 NetworkLogic.db.collection("messages").addDocument(data: [
                     "messageId": messageId,
                     "sentDate": sentDate,

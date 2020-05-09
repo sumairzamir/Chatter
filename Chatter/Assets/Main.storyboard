@@ -196,6 +196,11 @@
                         <viewLayoutGuide key="safeArea" id="WVH-La-fhD"/>
                     </view>
                     <navigationItem key="navigationItem" id="69G-uc-QYk">
+                        <barButtonItem key="leftBarButtonItem" title="Test" id="87g-E5-hIc">
+                            <connections>
+                                <action selector="tapTest:" destination="D0g-Ki-nuO" id="OKS-xv-JLe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="S6l-6s-iCW">
                             <connections>
                                 <action selector="logoutButtonTapped:" destination="D0g-Ki-nuO" id="2tW-IX-9S5"/>
@@ -207,6 +212,7 @@
                         <outlet property="logoutButton" destination="S6l-6s-iCW" id="iXg-b7-hiP"/>
                         <outlet property="parentView" destination="qCe-bb-ML5" id="pwc-sM-sG7"/>
                         <outlet property="subView" destination="HiP-BA-C7H" id="s9b-Ou-YaT"/>
+                        <outlet property="testInternet" destination="87g-E5-hIc" id="bUf-8h-BG6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFa-4o-4eU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
