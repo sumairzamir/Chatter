@@ -28,16 +28,7 @@ class ChatViewController: MessagesViewController {
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var chatLoadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var testInternet: UIBarButtonItem!
-    
-    // Testing method to remove
-    @IBAction func tapTest(_ sender: Any) {
-        if NetworkParameters.networkConnected == true {
-            NetworkParameters.networkConnected = false
-            print(NetworkParameters.networkConnected)
-        } else { NetworkParameters.networkConnected = true
-            print(NetworkParameters.networkConnected)
-        }
-    }
+    @IBOutlet var networkStatus: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,25 +50,9 @@ class ChatViewController: MessagesViewController {
         subView.isHidden = false
         chatLoadingIndicator.startAnimating()
         
-        // Enable offline persistance - Move to networking classes
-        let settings = FirestoreSettings()
-        settings.isPersistenceEnabled = true
-        NetworkParameters.db.settings = settings
-      
-      // Move into its own method
-                monitor.pathUpdateHandler = { path in
-                    if path.status == .satisfied {
-                        NetworkParameters.networkConnected = true
-                        print("connected")
-                    } else {
-                        NetworkParameters.networkConnected = false
-                        print("disconnected")
-                    }
-                }
+        NetworkLogic.enableOfflinePersistance()
         
-                let networkQueue = DispatchQueue(label: "Monitor")
-                monitor.start(queue: networkQueue)
-        
+        networkMonitor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,20 +86,35 @@ class ChatViewController: MessagesViewController {
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
+        NetworkLogic.logout(completionHandler: handleLogout(success:error:))
+    }
+    
+    func handleLogout(success: Bool, error: Error?) {
+        if success {
             navigationController?.popToRootViewController(animated: true)
-        } catch let signOutError {
-            print("Error signing out: %@", signOutError)
+        } else {
+            showLogicFailure(title: "Unable to logout", message: error!.localizedDescription)
         }
     }
+    
+    func networkMonitor() {
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                NetworkParameters.networkConnected = true
+            } else {
+                NetworkParameters.networkConnected = false
+            }
+        }
+        let networkQueue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: networkQueue)
+    }
+    
 }
 
 extension ChatViewController: MessagesDataSource {
     
     func currentSender() -> SenderType {
-        let currentUser = User(senderId: NetworkParameters.currentUserUid!, displayName: NetworkParameters.currentDisplayName)
+        let currentUser = User(senderId: NetworkParameters.userUid!, displayName: NetworkParameters.userDisplayName)
         return currentUser
     }
     
@@ -189,7 +179,6 @@ extension ChatViewController: MessagesDisplayDelegate {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(corner, .curved)
     }
-    
 }
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
@@ -210,8 +199,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                     "messageId": messageId,
                     "sentDate": sentDate,
                     "text": str,
-                    "user": NetworkParameters.currentDisplayName,
-                    "userId": NetworkParameters.currentUserUid!
+                    "user": NetworkParameters.userDisplayName,
+                    "userId": NetworkParameters.userUid!
                 ]) { (error) in
                     if error != nil {
                         self.showLogicFailure(title: "Unable to insert message", message: error?.localizedDescription ?? "")

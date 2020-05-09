@@ -29,20 +29,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        let email = emailTextField.text!
-        let password = passwordTextField.text!
+        NetworkParameters.userEmail = emailTextField.text!
+        NetworkParameters.userPassword = passwordTextField.text!
         
         setLoggingIn(true)
         
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if error != nil {
-                self.showLogicFailure(title: "Login failed", message: error?.localizedDescription ?? "")
-                self.setLoggingIn(false)
-            } else {
-                self.performSegue(withIdentifier: "ChatViewController", sender: nil)
-                self.setLoggingIn(false)
-            }
+        NetworkLogic.login(completionHandler: handleLoggingIn(success:error:))
+    }
+    
+    func handleLoggingIn(success: Bool, error: Error?) {
+        if success {
+            performSegue(withIdentifier: "ChatViewController", sender: nil)
+            setLoggingIn(false)
+        } else {
+            showLogicFailure(title: "Login failed", message: error?.localizedDescription ?? "")
+            setLoggingIn(false)
         }
+        
     }
     
     func setLoggingIn(_ loggingIn: Bool) {

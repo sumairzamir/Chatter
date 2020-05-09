@@ -24,26 +24,22 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
-        let displayName = displayNameTextField.text!
-        let email = emailTextField.text!
-        let password = passwordTextField.text!
+        NetworkParameters.userDisplayName = displayNameTextField.text!
+        NetworkParameters.userEmail = emailTextField.text!
+        NetworkParameters.userPassword = passwordTextField.text!
         
         setRegisterRequest(true)
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            if let error = error {
-                self.showLogicFailure(title: "Unable to create user", message: error.localizedDescription)
-                self.setRegisterRequest(false)
-            } else {
-                NetworkParameters.db.collection("users").addDocument(data: ["displayName": displayName, "uid": result!.user.uid]) { (error) in
-                    if error != nil {
-                        self.showLogicFailure(title: "Unable to create user", message: error?.localizedDescription ?? "")
-                        self.setRegisterRequest(false)
-                    }
-                    self.performSegue(withIdentifier: "ChatViewController", sender: nil)
-                    self.setRegisterRequest(false)
-                }
-            }
+        NetworkLogic.registerNewUser(completionHandler: handleNewUser(success:error:))
+    }
+    
+    func handleNewUser(success: Bool, error: Error?) {
+        if success {
+            self.performSegue(withIdentifier: "ChatViewController", sender: nil)
+            self.setRegisterRequest(false)
+        } else {
+            self.showLogicFailure(title: "Unable to create user", message: error!.localizedDescription)
+            self.setRegisterRequest(false)
         }
     }
     

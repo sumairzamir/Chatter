@@ -11,15 +11,58 @@ import Firebase
 
 class NetworkLogic {
     
-    // A method which adds a display name for a new user
+    class func login(completionHandler: @escaping (Bool, Error?) -> Void) {
+        NetworkParameters.firebaseAuth.signIn(withEmail: NetworkParameters.userEmail, password: NetworkParameters.userPassword) { (result, error) in
+            guard error != nil else {
+                NetworkParameters.userUid = Auth.auth().currentUser?.uid
+                DispatchQueue.main.async {
+                    completionHandler(true,nil)
+                }
+                return
+            }
+            completionHandler(false,error)
+        }
+    }
     
-    static func addDisplayName() {
-        
+    class func logout(completionHandler: @escaping (Bool, Error?) -> Void) {
+        do {
+            try NetworkParameters.firebaseAuth.signOut()
+            DispatchQueue.main.async {
+                completionHandler(true,nil)
+            }
+        } catch let error {
+            DispatchQueue.main.async {
+                completionHandler(false,error)
+            }
+        }
+    }
+    
+    class func registerNewUser(completionHandler: @escaping (Bool, Error?) -> Void) {
+        NetworkParameters.firebaseAuth.createUser(withEmail: NetworkParameters.userEmail, password: NetworkParameters.userPassword) { (result, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    completionHandler(false,error)
+                }
+            } else {
+                NetworkParameters.db.collection("users").addDocument(data: ["displayName": NetworkParameters.userDisplayName, "uid": result!.user.uid]) { (error) in
+                    guard error != nil else {
+                        NetworkParameters.userUid = Auth.auth().currentUser?.uid
+                        DispatchQueue.main.async {
+                            completionHandler(true,nil)
+                        }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        completionHandler(false,error)
+                    }
+                }
+            }
+        }
     }
     
     // A method which gets the display name of the currently logged in user
-    static func getCurrentUserData(completionHandler: @escaping (Bool, Error?) -> Void) {
-        let currentUserQuery = NetworkParameters.db.collection("users").whereField("uid", isEqualTo: NetworkParameters.currentUserUid!)
+    class func getCurrentUserData(completionHandler: @escaping (Bool, Error?) -> Void) {
+        let currentUserQuery = NetworkParameters.db.collection("users").whereField("uid", isEqualTo: NetworkParameters.userUid!)
         currentUserQuery.getDocuments { (snapshot, error) in
             guard let snapshot = snapshot else {
                 DispatchQueue.main.async {
@@ -30,7 +73,8 @@ class NetworkLogic {
             let currentUserData = snapshot.documents
             for currentUserDetails in currentUserData {
                 let displayName = currentUserDetails.data()["displayName"] as! String
-                NetworkParameters.currentDisplayName = displayName
+                NetworkParameters.userDisplayName = displayName
+                print(NetworkParameters.userDisplayName)
                 DispatchQueue.main.async {
                     completionHandler(true, nil)
                 }
@@ -38,8 +82,14 @@ class NetworkLogic {
         }
     }
     
+    class func enableOfflinePersistance() {
+        let settings = FirestoreSettings()
+        settings.isPersistenceEnabled = true
+        NetworkParameters.db.settings = settings
+    }
+    
     // A method which returns a Firestore listener to handle message send/receipt
-    static func getMessageUpdates(completionHandler: @escaping (Bool, Error?) -> Void) -> ListenerRegistration {
+    class func getMessageUpdates(completionHandler: @escaping (Bool, Error?) -> Void) -> ListenerRegistration {
         NetworkParameters.messages = []
         let dbMessages = NetworkParameters.db.collection("messages").order(by: "sentDate", descending: false).limit(toLast: 10)
         return dbMessages.addSnapshotListener { (snapshot, error) in
