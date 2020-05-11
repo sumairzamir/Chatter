@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AVKit
 
 class LoginViewController: UIViewController {
     
@@ -18,6 +19,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var chatterLogo: UIImageView!
     
+    var videoPlayer: AVQueuePlayer?
+    var videoLooper: AVPlayerLooper?
+    var videoPlayerLayer: AVPlayerLayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -26,6 +31,7 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        configureVideo()
     }
     
     @IBAction func loginTapped(_ sender: Any) {
@@ -65,7 +71,27 @@ class LoginViewController: UIViewController {
         Style.styleTextField(passwordTextField)
         Style.styleButtonBlue(loginButton)
         Style.styleButtonHollow(registerButton)
-        chatterLogo.image?.withTintColor(.white, renderingMode: .alwaysTemplate)
+        chatterLogo.alpha = 0.75
+    }
+    
+    func configureVideo() {
+        
+        let bundlePath = Bundle.main.path(forResource: "loginvideo", ofType: "mp4")
+        
+        guard bundlePath != nil else {
+            return
+        }
+        
+        let url = URL(fileURLWithPath: bundlePath!)
+        let item = AVPlayerItem(url: url)
+//        videoPlayer = AVPlayer(playerItem: item)
+        videoPlayer = AVQueuePlayer(playerItem: item)
+        videoLooper = AVPlayerLooper(player: videoPlayer!, templateItem: item)
+        videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
+        videoPlayerLayer?.frame = CGRect(x: -view.frame.size.width*1.5, y: 0, width: view.frame.size.width*4, height: view.frame.size.height)
+        view.layer.insertSublayer(videoPlayerLayer!, at: 0)
+        videoPlayer?.playImmediately(atRate: 1)
+        
     }
     
 }
