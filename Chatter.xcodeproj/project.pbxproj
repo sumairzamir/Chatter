@@ -13,6 +13,8 @@
 		88079ADF2467158500E1A9EA /* NetworkParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88079ADE2467158500E1A9EA /* NetworkParameters.swift */; };
 		8844BACD246091140065C34E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8844BACC246091140065C34E /* Main.storyboard */; };
 		884DED092469BF4500C1E627 /* loginvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 884DED082469BF4500C1E627 /* loginvideo.mp4 */; };
+		8854FAFB2469EEFD00DE418E /* ChatterUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FAFA2469EEFD00DE418E /* ChatterUnitTests.swift */; };
+		8854FB092469F30900DE418E /* ChatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FB082469F30900DE418E /* ChatterUITests.swift */; };
 		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
 		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
 		88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E32455C09C00B0520F /* Assets.xcassets */; };
@@ -25,6 +27,23 @@
 		88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F822DD245DA35400C61FB5 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8854FAFD2469EEFD00DE418E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88C7A6CC2455C09300B0520F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C7A6D32455C09300B0520F;
+			remoteInfo = Chatter;
+		};
+		8854FB0B2469F30900DE418E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88C7A6CC2455C09300B0520F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88C7A6D32455C09300B0520F;
+			remoteInfo = Chatter;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6D1A01F5988B73C12E00ABAC /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
 		88079AD82461CC3F00E1A9EA /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -32,6 +51,12 @@
 		88079ADE2467158500E1A9EA /* NetworkParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParameters.swift; sourceTree = "<group>"; };
 		8844BACC246091140065C34E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		884DED082469BF4500C1E627 /* loginvideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginvideo.mp4; sourceTree = "<group>"; };
+		8854FAF82469EEFD00DE418E /* ChatterUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatterUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8854FAFA2469EEFD00DE418E /* ChatterUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterUnitTests.swift; sourceTree = "<group>"; };
+		8854FAFC2469EEFD00DE418E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8854FB062469F30900DE418E /* ChatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8854FB082469F30900DE418E /* ChatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterUITests.swift; sourceTree = "<group>"; };
+		8854FB0A2469F30900DE418E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88C7A6D42455C09300B0520F /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C7A6D92455C09300B0520F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +74,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8854FAF52469EEFD00DE418E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8854FB032469F30900DE418E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88C7A6D12455C09300B0520F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,10 +99,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8854FAF92469EEFD00DE418E /* ChatterUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8854FAFA2469EEFD00DE418E /* ChatterUnitTests.swift */,
+				8854FAFC2469EEFD00DE418E /* Info.plist */,
+			);
+			path = ChatterUnitTests;
+			sourceTree = "<group>";
+		};
+		8854FB072469F30900DE418E /* ChatterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8854FB082469F30900DE418E /* ChatterUITests.swift */,
+				8854FB0A2469F30900DE418E /* Info.plist */,
+			);
+			path = ChatterUITests;
+			sourceTree = "<group>";
+		};
 		88C7A6CB2455C09300B0520F = {
 			isa = PBXGroup;
 			children = (
 				88C7A6D62455C09300B0520F /* Chatter */,
+				8854FAF92469EEFD00DE418E /* ChatterUnitTests */,
+				8854FB072469F30900DE418E /* ChatterUITests */,
 				88C7A6D52455C09300B0520F /* Products */,
 				EAFFB39F8A07A2A8F3CA0C30 /* Pods */,
 				E502243C81E088272A0D6CD7 /* Frameworks */,
@@ -74,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				88C7A6D42455C09300B0520F /* Chatter.app */,
+				8854FAF82469EEFD00DE418E /* ChatterUnitTests.xctest */,
+				8854FB062469F30900DE418E /* ChatterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,6 +214,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8854FAF72469EEFD00DE418E /* ChatterUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8854FAFF2469EEFD00DE418E /* Build configuration list for PBXNativeTarget "ChatterUnitTests" */;
+			buildPhases = (
+				8854FAF42469EEFD00DE418E /* Sources */,
+				8854FAF52469EEFD00DE418E /* Frameworks */,
+				8854FAF62469EEFD00DE418E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8854FAFE2469EEFD00DE418E /* PBXTargetDependency */,
+			);
+			name = ChatterUnitTests;
+			productName = ChatterUnitTests;
+			productReference = 8854FAF82469EEFD00DE418E /* ChatterUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8854FB052469F30900DE418E /* ChatterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8854FB0D2469F30900DE418E /* Build configuration list for PBXNativeTarget "ChatterUITests" */;
+			buildPhases = (
+				8854FB022469F30900DE418E /* Sources */,
+				8854FB032469F30900DE418E /* Frameworks */,
+				8854FB042469F30900DE418E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8854FB0C2469F30900DE418E /* PBXTargetDependency */,
+			);
+			name = ChatterUITests;
+			productName = ChatterUITests;
+			productReference = 8854FB062469F30900DE418E /* ChatterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		88C7A6D32455C09300B0520F /* Chatter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88C7A6EB2455C09C00B0520F /* Build configuration list for PBXNativeTarget "Chatter" */;
@@ -182,6 +279,14 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Sumair Zamir";
 				TargetAttributes = {
+					8854FAF72469EEFD00DE418E = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 88C7A6D32455C09300B0520F;
+					};
+					8854FB052469F30900DE418E = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 88C7A6D32455C09300B0520F;
+					};
 					88C7A6D32455C09300B0520F = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -201,11 +306,27 @@
 			projectRoot = "";
 			targets = (
 				88C7A6D32455C09300B0520F /* Chatter */,
+				8854FAF72469EEFD00DE418E /* ChatterUnitTests */,
+				8854FB052469F30900DE418E /* ChatterUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8854FAF62469EEFD00DE418E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8854FB042469F30900DE418E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88C7A6D22455C09300B0520F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +384,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8854FAF42469EEFD00DE418E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8854FAFB2469EEFD00DE418E /* ChatterUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8854FB022469F30900DE418E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8854FB092469F30900DE418E /* ChatterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88C7A6D02455C09300B0520F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +419,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8854FAFE2469EEFD00DE418E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88C7A6D32455C09300B0520F /* Chatter */;
+			targetProxy = 8854FAFD2469EEFD00DE418E /* PBXContainerItemProxy */;
+		};
+		8854FB0C2469F30900DE418E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88C7A6D32455C09300B0520F /* Chatter */;
+			targetProxy = 8854FB0B2469F30900DE418E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		88C7A6E52455C09C00B0520F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -294,6 +444,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8854FB002469EEFD00DE418E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AMAMNTQA2;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"";
+				INFOPLIST_FILE = ChatterUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.ChatterUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chatter.app/Chatter";
+			};
+			name = Debug;
+		};
+		8854FB012469EEFD00DE418E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AMAMNTQA2;
+				HEADER_SEARCH_PATHS = "\"${SRCROOT}/Pods/Firebase/CoreOnly/Sources\"";
+				INFOPLIST_FILE = ChatterUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.ChatterUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chatter.app/Chatter";
+			};
+			name = Release;
+		};
+		8854FB0E2469F30900DE418E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AMAMNTQA2;
+				INFOPLIST_FILE = ChatterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.ChatterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Chatter;
+			};
+			name = Debug;
+		};
+		8854FB0F2469F30900DE418E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2AMAMNTQA2;
+				INFOPLIST_FILE = ChatterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumair.ChatterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Chatter;
+			};
+			name = Release;
+		};
 		88C7A6E92455C09C00B0520F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,6 +679,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8854FAFF2469EEFD00DE418E /* Build configuration list for PBXNativeTarget "ChatterUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8854FB002469EEFD00DE418E /* Debug */,
+				8854FB012469EEFD00DE418E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8854FB0D2469F30900DE418E /* Build configuration list for PBXNativeTarget "ChatterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8854FB0E2469F30900DE418E /* Debug */,
+				8854FB0F2469F30900DE418E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		88C7A6CF2455C09300B0520F /* Build configuration list for PBXProject "Chatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

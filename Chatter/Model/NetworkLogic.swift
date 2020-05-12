@@ -37,6 +37,10 @@ class NetworkLogic {
         }
     }
     
+    class func returnDisplayName() -> String {
+        return NetworkParameters.userDisplayName
+    }
+    
     class func registerNewUser(completionHandler: @escaping (Bool, Error?) -> Void) {
         NetworkParameters.firebaseAuth.createUser(withEmail: NetworkParameters.userEmail, password: NetworkParameters.userPassword) { (result, error) in
             if let error = error {
@@ -74,7 +78,6 @@ class NetworkLogic {
             for currentUserDetails in currentUserData {
                 let displayName = currentUserDetails.data()["displayName"] as! String
                 NetworkParameters.userDisplayName = displayName
-                print(NetworkParameters.userDisplayName)
                 DispatchQueue.main.async {
                     completionHandler(true, nil)
                 }
