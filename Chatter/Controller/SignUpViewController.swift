@@ -56,10 +56,10 @@ class SignUpViewController: UIViewController {
     }
     
     func configureUI() {
-        Style.styleTextField(displayNameTextField)
-        Style.styleTextField(emailTextField)
-        Style.styleTextField(passwordTextField)
-        Style.styleButtonBlue(signUpButton)
+        Style.styleTextFieldLine(displayNameTextField)
+        Style.styleTextFieldLine(emailTextField)
+        Style.styleTextFieldLine(passwordTextField)
+        Style.styleButtonWhite(signUpButton)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     

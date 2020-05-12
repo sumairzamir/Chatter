@@ -168,7 +168,7 @@ extension ChatViewController: MessagesLayoutDelegate {
 extension ChatViewController: MessagesDisplayDelegate {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .systemBlue : .systemGray6
+        return isFromCurrentSender(message: message) ? .systemGray6: .systemGray3
     }
     
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
@@ -179,6 +179,13 @@ extension ChatViewController: MessagesDisplayDelegate {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(corner, .curved)
     }
+    
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        let image = UIImage(named: "avatar")
+        let avatar = Avatar(image: image, initials: "")
+        avatarView.set(avatar: avatar)
+    }
+    
 }
 
 extension ChatViewController: InputBarAccessoryViewDelegate {

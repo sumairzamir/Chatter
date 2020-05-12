@@ -196,7 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="WVH-La-fhD"/>
                     </view>
                     <navigationItem key="navigationItem" id="69G-uc-QYk">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" image="person.badge.minus.fill" catalog="system" id="S6l-6s-iCW">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" image="person.crop.circle.badge.xmark" catalog="system" id="S6l-6s-iCW">
                             <connections>
                                 <action selector="logoutButtonTapped:" destination="D0g-Ki-nuO" id="2tW-IX-9S5"/>
                             </connections>
@@ -219,6 +219,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="message.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="person.badge.minus.fill" catalog="system" width="128" height="116"/>
+        <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
     </resources>
 </document>

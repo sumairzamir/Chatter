@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginTapped(_ sender: Any) {
         NetworkParameters.userEmail = emailTextField.text!
         NetworkParameters.userPassword = passwordTextField.text!
-        
+
         setLoggingIn(true)
         
         NetworkLogic.login(completionHandler: handleLoggingIn(success:error:))
@@ -67,31 +67,26 @@ class LoginViewController: UIViewController {
     }
     
     func configureUI() {
-        Style.styleTextField(emailTextField)
-        Style.styleTextField(passwordTextField)
-        Style.styleButtonBlue(loginButton)
+        Style.styleTextFieldBackground(emailTextField)
+        Style.styleTextFieldBackground(passwordTextField)
+        Style.styleButtonBlack(loginButton)
         Style.styleButtonHollow(registerButton)
         chatterLogo.alpha = 0.75
     }
     
     func configureVideo() {
-        
         let bundlePath = Bundle.main.path(forResource: "loginvideo", ofType: "mp4")
-        
         guard bundlePath != nil else {
             return
         }
-        
         let url = URL(fileURLWithPath: bundlePath!)
         let item = AVPlayerItem(url: url)
-//        videoPlayer = AVPlayer(playerItem: item)
         videoPlayer = AVQueuePlayer(playerItem: item)
         videoLooper = AVPlayerLooper(player: videoPlayer!, templateItem: item)
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer)
         videoPlayerLayer?.frame = CGRect(x: -view.frame.size.width*1.5, y: 0, width: view.frame.size.width*4, height: view.frame.size.height)
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
         videoPlayer?.playImmediately(atRate: 1)
-        
     }
     
 }
