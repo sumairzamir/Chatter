@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import RxSwift
 
 class NetworkParameters {
     
@@ -22,5 +23,26 @@ class NetworkParameters {
     
     static var scrollAnimated = false
     static var networkConnected = true
+    
+    // rx avatar experiment
+    static let rxUserAvatar = BehaviorSubject(value: "")
+    
+    static var rxUserAvatarObserver:Observable<String> {
+        return rxUserAvatar.asObservable()
+    }
+    
+    enum Colour: String {
+        case blue
+        case black
+        
+        var colours: UIColor {
+            switch self {
+            case .blue:
+                return UIColor.blue
+            case .black:
+                return UIColor.black
+            }
+        }
+    }
     
 }

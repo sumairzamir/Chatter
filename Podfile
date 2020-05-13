@@ -9,6 +9,8 @@ target 'Chatter' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'Firebase/Analytics'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5' 
 
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!

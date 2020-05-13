@@ -11,6 +11,7 @@ import MessageKit
 import Firebase
 import InputBarAccessoryView
 import Network
+import RxSwift
 
 class ChatViewController: MessagesViewController {
     
@@ -27,8 +28,6 @@ class ChatViewController: MessagesViewController {
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var chatLoadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var testInternet: UIBarButtonItem!
-    @IBOutlet var networkStatus: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +54,13 @@ class ChatViewController: MessagesViewController {
         networkMonitor()
     }
     
+    var disposeBag = DisposeBag()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NetworkLogic.getCurrentUserData(completionHandler: handleUserData(success:error:))
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -181,8 +184,14 @@ extension ChatViewController: MessagesDisplayDelegate {
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let image = UIImage(named: "avatar")
+        
+        let image = UIImage(named: "avatarSymbol")
         let avatar = Avatar(image: image, initials: "")
+       
+        // rx subscription
+        NetworkParameters.rxUserAvatar.subscribe(onNext: { (avatarColor) in
+            avatarView.tintColor = NetworkParameters.Colour(rawValue: avatarColor)?.colours}).disposed(by: disposeBag)
+
         avatarView.set(avatar: avatar)
     }
     

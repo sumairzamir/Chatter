@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import AVKit
+import RxSwift
 
 class LoginViewController: UIViewController {
     
@@ -18,10 +19,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var chatterLogo: UIImageView!
+    @IBOutlet weak var avatarSelect1: UIButton!
+    @IBOutlet weak var avatarSelect2: UIButton!
     
     var videoPlayer: AVQueuePlayer?
     var videoLooper: AVPlayerLooper?
     var videoPlayerLayer: AVPlayerLayer?
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +39,18 @@ class LoginViewController: UIViewController {
         configureVideo()
     }
     
+    @IBAction func tapAvatar1(_ sender: Any) {
+        NetworkParameters.rxUserAvatar.onNext("blue")
+    }
+    
+    @IBAction func tapAvatar2(_ sender: Any) {
+        NetworkParameters.rxUserAvatar.onNext("black")
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
         NetworkParameters.userEmail = emailTextField.text!
         NetworkParameters.userPassword = passwordTextField.text!
-
+        
         setLoggingIn(true)
         
         NetworkLogic.login(completionHandler: handleLoggingIn(success:error:))
@@ -72,6 +85,8 @@ class LoginViewController: UIViewController {
         Style.styleButtonBlack(loginButton)
         Style.styleButtonHollow(registerButton)
         chatterLogo.alpha = 0.75
+        avatarSelect1.tintColor = .blue
+        avatarSelect2.tintColor = .black
     }
     
     func configureVideo() {

@@ -71,15 +71,34 @@
                                     <constraint firstAttribute="height" constant="151.33333333333331" id="kQK-Tw-ce4"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-LX-dC5">
+                                <rect key="frame" x="175" y="309" width="17" height="22"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="avatarSymbol"/>
+                                <connections>
+                                    <action selector="tapAvatar1:" destination="f4o-xh-Aln" eventType="touchUpInside" id="ugg-ae-zxs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN1-Zg-XJt">
+                                <rect key="frame" x="222" y="309" width="17" height="22"/>
+                                <state key="normal" image="avatarSymbol"/>
+                                <connections>
+                                    <action selector="tapAvatar2:" destination="f4o-xh-Aln" eventType="touchUpInside" id="QG3-3Q-6Cq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerY" secondItem="hee-SC-uaW" secondAttribute="centerY" id="2S9-VJ-3QI"/>
                             <constraint firstItem="oM0-r0-T6e" firstAttribute="top" secondItem="hee-SC-uaW" secondAttribute="top" constant="150" id="DbJ-Hv-HvQ"/>
+                            <constraint firstItem="eN1-Zg-XJt" firstAttribute="top" secondItem="oM0-r0-T6e" secondAttribute="bottom" constant="7.6666666666666856" id="F2r-3W-dhr"/>
                             <constraint firstItem="M4F-sE-AHg" firstAttribute="top" secondItem="1xu-lf-czx" secondAttribute="bottom" constant="20" id="GgC-ca-ZSq"/>
                             <constraint firstItem="M4F-sE-AHg" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="IJC-Me-zBk"/>
+                            <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="eN1-Zg-XJt" secondAttribute="trailing" constant="175" id="Iok-Vp-F74"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="20" id="QiX-BW-Cbf"/>
                             <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="1xu-lf-czx" secondAttribute="trailing" constant="20" id="QyK-qq-dY6"/>
+                            <constraint firstItem="eIM-LX-dC5" firstAttribute="top" secondItem="oM0-r0-T6e" secondAttribute="bottom" constant="7.6666666666666856" id="VDr-GL-5eS"/>
+                            <constraint firstItem="eIM-LX-dC5" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="175" id="eYB-gH-Zvc"/>
                             <constraint firstItem="oM0-r0-T6e" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="gXK-ll-6Us"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="rVS-LV-iXQ"/>
                         </constraints>
@@ -87,6 +106,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="iRj-LU-UIH"/>
                     <connections>
+                        <outlet property="avatarSelect1" destination="eIM-LX-dC5" id="5FL-ur-jrj"/>
+                        <outlet property="avatarSelect2" destination="eN1-Zg-XJt" id="POp-f6-qnw"/>
                         <outlet property="chatterLogo" destination="oM0-r0-T6e" id="UDb-x3-orH"/>
                         <outlet property="emailTextField" destination="aXA-QU-2NB" id="PCz-eN-JPc"/>
                         <outlet property="loginActivityIndicator" destination="M4F-sE-AHg" id="l1W-Q1-XR2"/>
@@ -218,6 +239,7 @@
         <segue reference="UJn-Ly-qga"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="avatarSymbol" width="17" height="17"/>
         <image name="message.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
     </resources>
