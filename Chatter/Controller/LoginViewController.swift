@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    var loginViewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -48,12 +50,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        NetworkParameters.userEmail = emailTextField.text!
-        NetworkParameters.userPassword = passwordTextField.text!
+        
+        loginViewModel.userEmail = emailTextField.text!
+        loginViewModel.userPassword = passwordTextField.text!
+        loginViewModel.login(completionHandler: handleLoggingIn(success:error:))
+        
+//        NetworkParameters.userEmail = emailTextField.text!
+//        NetworkParameters.userPassword = passwordTextField.text!
         
         setLoggingIn(true)
         
-        NetworkLogic.login(completionHandler: handleLoggingIn(success:error:))
+//        NetworkLogic.login(completionHandler: handleLoggingIn(success:error:))
     }
     
     func handleLoggingIn(success: Bool, error: Error?) {

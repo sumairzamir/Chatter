@@ -15,6 +15,7 @@
 		884DED092469BF4500C1E627 /* loginvideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 884DED082469BF4500C1E627 /* loginvideo.mp4 */; };
 		8854FAFB2469EEFD00DE418E /* ChatterUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FAFA2469EEFD00DE418E /* ChatterUnitTests.swift */; };
 		8854FB092469F30900DE418E /* ChatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8854FB082469F30900DE418E /* ChatterUITests.swift */; };
+		88A28D37246DF61C00AF3397 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A28D36246DF61C00AF3397 /* LoginViewModel.swift */; };
 		88A7D88B246A9798002831B7 /* Chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A7D888246A9798002831B7 /* Chat.png */; };
 		88A7D88C246A9798002831B7 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A7D889246A9798002831B7 /* Login.png */; };
 		88A7D88D246A9798002831B7 /* Signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A7D88A246A9798002831B7 /* Signup.png */; };
@@ -60,6 +61,7 @@
 		8854FB062469F30900DE418E /* ChatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8854FB082469F30900DE418E /* ChatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterUITests.swift; sourceTree = "<group>"; };
 		8854FB0A2469F30900DE418E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88A28D36246DF61C00AF3397 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		88A7D888246A9798002831B7 /* Chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chat.png; sourceTree = "<group>"; };
 		88A7D889246A9798002831B7 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
 		88A7D88A246A9798002831B7 /* Signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signup.png; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = ChatterUITests;
 			sourceTree = "<group>";
 		};
+		88A28D35246DF5F500AF3397 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				88A28D36246DF61C00AF3397 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		88A7D887246A976B002831B7 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 				88C7A6E82455C09C00B0520F /* Info.plist */,
 				88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */,
 				88C7A6EE2455C0A800B0520F /* Model */,
+				88A28D35246DF5F500AF3397 /* ViewModel */,
 				88C7A6EF2455C0AD00B0520F /* View */,
 				88C7A6F02455C0B100B0520F /* Controller */,
 				88C7A6F12455C0CC00B0520F /* Assets */,
@@ -426,6 +437,7 @@
 			files = (
 				88F822DE245DA35400C61FB5 /* SignUpViewController.swift in Sources */,
 				88079ADB246357B000E1A9EA /* NetworkLogic.swift in Sources */,
+				88A28D37246DF61C00AF3397 /* LoginViewModel.swift in Sources */,
 				88079ADF2467158500E1A9EA /* NetworkParameters.swift in Sources */,
 				88F822D7245B717400C61FB5 /* User.swift in Sources */,
 				88F822D5245B705400C61FB5 /* Messages.swift in Sources */,
