@@ -42,25 +42,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapAvatar1(_ sender: Any) {
-        NetworkParameters.rxUserAvatar.onNext("blue")
+        FirebaseParameters.rxUserAvatar.onNext("blue")
     }
     
     @IBAction func tapAvatar2(_ sender: Any) {
-        NetworkParameters.rxUserAvatar.onNext("black")
+        FirebaseParameters.rxUserAvatar.onNext("black")
     }
     
     @IBAction func loginTapped(_ sender: Any) {
-        
         loginViewModel.userEmail = emailTextField.text!
         loginViewModel.userPassword = passwordTextField.text!
         loginViewModel.login(completionHandler: handleLoggingIn(success:error:))
-        
-//        NetworkParameters.userEmail = emailTextField.text!
-//        NetworkParameters.userPassword = passwordTextField.text!
-        
         setLoggingIn(true)
-        
-//        NetworkLogic.login(completionHandler: handleLoggingIn(success:error:))
     }
     
     func handleLoggingIn(success: Bool, error: Error?) {

@@ -10,22 +10,13 @@ import Foundation
 import Firebase
 import RxSwift
 
-class NetworkParameters {
+class FirebaseParameters {
     
     static let db = Firestore.firestore()
-    static let firebaseAuth = Auth.auth()
-    
-    static var messages: [Message] = []
-    static var userUid = Auth.auth().currentUser?.uid
-    static var userDisplayName = ""
-    static var userEmail = ""
-    static var userPassword = ""
-    
-    static var scrollAnimated = false
-    static var networkConnected = true
+    static let auth = Auth.auth()
     
     // rx avatar experiment
-    static let rxUserAvatar = BehaviorSubject(value: "")
+    static let rxUserAvatar = BehaviorSubject(value: "black")
     
     static var rxUserAvatarObserver:Observable<String> {
         return rxUserAvatar.asObservable()
@@ -40,7 +31,7 @@ class NetworkParameters {
             case .blue:
                 return UIColor.blue
             case .black:
-                return UIColor.black
+                return UIColor.white
             }
         }
     }

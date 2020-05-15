@@ -18,19 +18,19 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var registerActivityIndicator: UIActivityIndicatorView!
     
+    var signUpViewModel = SignUpViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
-        NetworkParameters.userDisplayName = displayNameTextField.text!
-        NetworkParameters.userEmail = emailTextField.text!
-        NetworkParameters.userPassword = passwordTextField.text!
-        
+        signUpViewModel.newUserDisplayName = displayNameTextField.text!
+        signUpViewModel.newUserEmail = emailTextField.text!
+        signUpViewModel.newUserPassword = passwordTextField.text!
+        signUpViewModel.registerNewUser(completionHandler: handleNewUser(success:error:))
         setRegisterRequest(true)
-        
-        NetworkLogic.registerNewUser(completionHandler: handleNewUser(success:error:))
     }
     
     func handleNewUser(success: Bool, error: Error?) {

@@ -74,14 +74,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-LX-dC5">
                                 <rect key="frame" x="175" y="309" width="17" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="avatarSymbol"/>
+                                <state key="normal" image="senderAvatarSymbol"/>
                                 <connections>
                                     <action selector="tapAvatar1:" destination="f4o-xh-Aln" eventType="touchUpInside" id="ugg-ae-zxs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN1-Zg-XJt">
                                 <rect key="frame" x="222" y="309" width="17" height="22"/>
-                                <state key="normal" image="avatarSymbol"/>
+                                <state key="normal" image="senderAvatarSymbol"/>
                                 <connections>
                                     <action selector="tapAvatar2:" destination="f4o-xh-Aln" eventType="touchUpInside" id="QG3-3Q-6Cq"/>
                                 </connections>
@@ -239,8 +239,8 @@
         <segue reference="UJn-Ly-qga"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="avatarSymbol" width="17" height="17"/>
         <image name="message.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
+        <image name="senderAvatarSymbol" width="17" height="17"/>
     </resources>
 </document>
