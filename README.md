@@ -1,5 +1,18 @@
 # Chatter
-Chat with others in real-time on an app powered by MessageKit and Firebase.
+Chat with others in real-time on an app powered by MessageKit and Firebase. Avatar selection using RxSwift.
+
+# Preview
+Login:
+
+<img src="https://github.com/sumairzamir/Chatter/blob/master/Chatter/Assets/Screenshots/Login.png" width="200" height="432">
+
+Register:
+
+<img src="https://github.com/sumairzamir/Chatter/blob/master/Chatter/Assets/Screenshots/Signup.png" width="200" height="432">
+
+Chat:
+
+<img src="https://github.com/sumairzamir/Chatter/blob/master/Chatter/Assets/Screenshots/Chat.png" width="200" height="432">
 
 # Project Overview
 An app that showcases iOS development learning. The app demonstrates proficiency in these four areas:
