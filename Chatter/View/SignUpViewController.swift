@@ -12,13 +12,13 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
+    var signUpViewModel = SignUpViewModel()
+    
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var registerActivityIndicator: UIActivityIndicatorView!
-    
-    var signUpViewModel = SignUpViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +26,15 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
+        registerNewUser()
+        setRegisterRequest(true)
+    }
+    
+    func registerNewUser() {
         signUpViewModel.newUserDisplayName = displayNameTextField.text!
         signUpViewModel.newUserEmail = emailTextField.text!
         signUpViewModel.newUserPassword = passwordTextField.text!
         signUpViewModel.registerNewUser(completionHandler: handleNewUser(success:error:))
-        setRegisterRequest(true)
     }
     
     func handleNewUser(success: Bool, error: Error?) {

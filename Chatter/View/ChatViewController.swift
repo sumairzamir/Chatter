@@ -15,17 +15,8 @@ import RxSwift
 
 class ChatViewController: MessagesViewController {
     
-    let monitor = NWPathMonitor()
-    var chatListener: ListenerRegistration?
     var chatViewModel = ChatViewModel()
-    
     var disposeBag = DisposeBag()
-    
-    let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
-    }()
     
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var subView: UIView!
@@ -34,9 +25,9 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        chatViewModel.configureNetwork()
         defineDelegates()
         configureUI()
-        configureNetwork()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,26 +38,7 @@ class ChatViewController: MessagesViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         chatViewModel.scrollAnimated = false
-        chatListener!.remove()
-    }
-    
-    func handleUserData(success: Bool, error: Error?) {
-        if success {
-            chatListener = chatViewModel.getMessageUpdates(completionHandler: handleMessageData(success:error:))
-        } else {
-            showLogicFailure(title: "Network error", message: error?.localizedDescription ?? "")
-        }
-    }
-    
-    func handleMessageData(success: Bool, error: Error?) {
-        if success {
-            messagesCollectionView.reloadData()
-            messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: chatViewModel.messagesArray.count - 1), at: .top, animated: chatViewModel.scrollAnimated)
-            chatLoadingIndicator.stopAnimating()
-            subView.isHidden = true
-        } else {
-            showLogicFailure(title: "Unable to update", message: error?.localizedDescription ?? "")
-        }
+        chatViewModel.chatListener!.remove()
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -81,16 +53,27 @@ class ChatViewController: MessagesViewController {
         }
     }
     
-    func networkMonitor() {
-        monitor.pathUpdateHandler = { path in
-            if path.status == .satisfied {
-                self.chatViewModel.networkConnected = true
-            } else {
-                self.chatViewModel.networkConnected = false
-            }
+    func handleUserData(success: Bool, error: Error?) {
+        if success {
+            chatViewModel.chatListener = chatViewModel.getMessageUpdates(completionHandler: handleMessageData(success:error:))
+        } else {
+            showLogicFailure(title: "Network error", message: error?.localizedDescription ?? "")
         }
-        let networkQueue = DispatchQueue(label: "Monitor")
-        monitor.start(queue: networkQueue)
+    }
+    
+    func handleMessageData(success: Bool, error: Error?) {
+        if success {
+            configureMessageView()
+        } else {
+            showLogicFailure(title: "Unable to update", message: error?.localizedDescription ?? "")
+        }
+    }
+    
+    func configureMessageView() {
+        messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToItem(at: IndexPath(row: 0, section: chatViewModel.messagesArray.count - 1), at: .top, animated: chatViewModel.scrollAnimated)
+        chatLoadingIndicator.stopAnimating()
+        subView.isHidden = true
     }
     
     func configureUI() {
@@ -111,10 +94,5 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
     }
-    
-    func configureNetwork() {
-        chatViewModel.enableOfflinePersistance()
-        networkMonitor()
-    }
-    
+ 
 }

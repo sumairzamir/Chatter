@@ -149,6 +149,22 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
+		88C1B097246FECC4008E6641 /* UI Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				88079AD82461CC3F00E1A9EA /* Style.swift */,
+			);
+			path = "UI Parameters";
+			sourceTree = "<group>";
+		};
+		88C1B098246FF096008E6641 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88C1B095246EF14D008E6641 /* ChatViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		88C7A6CB2455C09300B0520F = {
 			isa = PBXGroup;
 			children = (
@@ -200,10 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				88F822D1245A163500C61FB5 /* ChatViewController.swift */,
-				88C1B095246EF14D008E6641 /* ChatViewExtensions.swift */,
 				88F822DB245D8A3400C61FB5 /* LoginViewController.swift */,
 				88F822DD245DA35400C61FB5 /* SignUpViewController.swift */,
-				88079AD82461CC3F00E1A9EA /* Style.swift */,
+				88C1B098246FF096008E6641 /* Extensions */,
+				88C1B097246FECC4008E6641 /* UI Parameters */,
 			);
 			path = View;
 			sourceTree = "<group>";

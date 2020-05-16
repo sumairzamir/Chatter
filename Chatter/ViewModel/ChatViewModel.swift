@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import Network
 
 class ChatViewModel {
     
@@ -17,6 +18,36 @@ class ChatViewModel {
     
     var scrollAnimated = false
     var networkConnected = true
+    
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+    
+    let monitor = NWPathMonitor()
+    var chatListener: ListenerRegistration?
+    
+    func configureNetwork() {
+        enableOfflinePersistance()
+        networkMonitor()
+    }
+    
+    func networkMonitor() {
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.networkConnected = true
+            } else {
+                self.networkConnected = false
+            }
+        }
+        let networkQueue = DispatchQueue(label: "Monitor")
+        monitor.start(queue: networkQueue)
+    }
+    
+}
+
+extension ChatViewModel {
     
     func logout(completionHandler: @escaping (Bool, Error?) -> Void) {
         do {
