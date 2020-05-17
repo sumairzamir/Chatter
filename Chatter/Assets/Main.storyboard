@@ -229,6 +229,25 @@
                         <viewLayoutGuide key="safeArea" id="WVH-La-fhD"/>
                     </view>
                     <navigationItem key="navigationItem" id="69G-uc-QYk">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="l4p-wr-7gM">
+                            <view key="customView" contentMode="scaleToFill" id="QEN-an-Kr1">
+                                <rect key="frame" x="20" y="5.6666666666666679" width="92" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-xa-j4n">
+                                        <rect key="frame" x="0.0" y="1.3333333333333333" width="30" height="30"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="oa6-xa-j4n" firstAttribute="centerX" secondItem="QEN-an-Kr1" secondAttribute="centerX" constant="-31" id="0L5-aG-bB2"/>
+                                    <constraint firstItem="oa6-xa-j4n" firstAttribute="top" secondItem="QEN-an-Kr1" secondAttribute="top" id="Blq-wD-GMb"/>
+                                    <constraint firstItem="oa6-xa-j4n" firstAttribute="centerY" secondItem="QEN-an-Kr1" secondAttribute="centerY" id="TnB-X9-prf"/>
+                                    <constraint firstItem="oa6-xa-j4n" firstAttribute="leading" secondItem="QEN-an-Kr1" secondAttribute="leading" id="YDz-kR-ImE"/>
+                                    <constraint firstAttribute="bottom" secondItem="oa6-xa-j4n" secondAttribute="bottom" id="YMA-up-RXE"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" image="person.crop.circle.badge.xmark" catalog="system" id="S6l-6s-iCW">
                             <connections>
                                 <action selector="logoutButtonTapped:" destination="D0g-Ki-nuO" id="2tW-IX-9S5"/>
@@ -238,6 +257,7 @@
                     <connections>
                         <outlet property="chatLoadingIndicator" destination="1mi-pn-nT8" id="HPy-ld-39y"/>
                         <outlet property="logoutButton" destination="S6l-6s-iCW" id="iXg-b7-hiP"/>
+                        <outlet property="networkView" destination="QEN-an-Kr1" id="9oZ-dh-PHF"/>
                         <outlet property="parentView" destination="qCe-bb-ML5" id="pwc-sM-sG7"/>
                         <outlet property="subView" destination="HiP-BA-C7H" id="s9b-Ou-YaT"/>
                     </connections>
@@ -254,5 +274,6 @@
         <image name="message.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.xmark" catalog="system" width="128" height="101"/>
         <image name="senderAvatarSymbol" width="17" height="17"/>
+        <image name="xmark.icloud.fill" catalog="system" width="128" height="88"/>
     </resources>
 </document>

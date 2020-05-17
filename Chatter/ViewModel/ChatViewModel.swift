@@ -28,17 +28,23 @@ class ChatViewModel {
     let monitor = NWPathMonitor()
     var chatListener: ListenerRegistration?
     
-    func configureNetwork() {
+    func configureNetwork(_ view: UIView) {
         enableOfflinePersistance()
-        networkMonitor()
+        networkMonitor(view)
     }
     
-    func networkMonitor() {
+    func networkMonitor(_ view: UIView) {
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 self.networkConnected = true
+                DispatchQueue.main.async {
+                    view.isHidden = true
+                }
             } else {
                 self.networkConnected = false
+                DispatchQueue.main.async {
+                    view.isHidden = false
+                }
             }
         }
         let networkQueue = DispatchQueue(label: "Monitor")

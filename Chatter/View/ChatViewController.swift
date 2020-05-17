@@ -10,7 +10,6 @@ import UIKit
 import MessageKit
 import Firebase
 import InputBarAccessoryView
-import Network
 import RxSwift
 
 class ChatViewController: MessagesViewController {
@@ -22,10 +21,11 @@ class ChatViewController: MessagesViewController {
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var chatLoadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var networkView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chatViewModel.configureNetwork()
+        chatViewModel.configureNetwork(networkView)
         defineDelegates()
         configureUI()
     }
