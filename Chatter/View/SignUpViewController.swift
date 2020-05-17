@@ -20,8 +20,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var registerActivityIndicator: UIActivityIndicatorView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureUI()
     }
     
@@ -60,11 +60,22 @@ class SignUpViewController: UIViewController {
     }
     
     func configureUI() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        configureTextFields()
+    }
+    
+    func configureTextFields() {
         Style.styleTextFieldLine(displayNameTextField)
         Style.styleTextFieldLine(emailTextField)
         Style.styleTextFieldLine(passwordTextField)
         Style.styleButtonWhite(signUpButton)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        configureTextFieldLeftView()
+    }
+    
+    func configureTextFieldLeftView() {
+        Style.leftViewImage("senderAvatarSymbol", imageWidth: 20, imageHeight: 20, textField: displayNameTextField)
+        Style.leftViewImage("emailSymbol", imageWidth: 20, imageHeight: 20, textField: emailTextField)
+        Style.leftViewImage("passwordSymbol", imageWidth: 20, imageHeight: 15, textField: passwordTextField)
     }
     
 }

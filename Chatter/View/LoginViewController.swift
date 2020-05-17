@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var chatterLogo: UIImageView!
     @IBOutlet weak var avatarSelect1: UIButton!
     @IBOutlet weak var avatarSelect2: UIButton!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,11 +32,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapAvatar1(_ sender: Any) {
-        FirebaseParameters.rxUserAvatar.onNext("blue")
+        Style.rxUserAvatarColour.onNext("cyan")
+        configureTextFieldLeftView()
     }
     
     @IBAction func tapAvatar2(_ sender: Any) {
-        FirebaseParameters.rxUserAvatar.onNext("black")
+        Style.rxUserAvatarColour.onNext("white")
+        configureTextFieldLeftView()
     }
     
     @IBAction func loginTapped(_ sender: Any) {
@@ -73,13 +76,32 @@ class LoginViewController: UIViewController {
     
     func configureUI() {
         navigationController?.setNavigationBarHidden(true, animated: true)
+        chatterLogo.alpha = 0.75
+        configureTextFields()
+        configureVideoPlayer()
+        configureAvatarButtons()
+    }
+    
+    func configureTextFields(){
         Style.styleTextFieldBackground(emailTextField)
         Style.styleTextFieldBackground(passwordTextField)
         Style.styleButtonBlack(loginButton)
         Style.styleButtonHollow(registerButton)
-        chatterLogo.alpha = 0.75
-        avatarSelect1.tintColor = .blue
-        avatarSelect2.tintColor = .black
+        Style.avatarImageView(avatarImageView)
+        configureTextFieldLeftView()
+    }
+    
+    func configureTextFieldLeftView() {
+        Style.leftViewImage("emailSymbol", imageWidth: 20, imageHeight: 20, textField: emailTextField)
+        Style.leftViewImage("passwordSymbol", imageWidth: 20, imageHeight: 15, textField: passwordTextField)
+    }
+    
+    func configureAvatarButtons() {
+        avatarSelect1.tintColor = .systemBlue
+        avatarSelect2.tintColor = .white
+    }
+    
+    func configureVideoPlayer() {
         loginViewModel.videoPlayerLayer?.frame = CGRect(x: -view.frame.size.width*1.5, y: 0, width: view.frame.size.width*4, height: view.frame.size.height)
         view.layer.insertSublayer(loginViewModel.videoPlayerLayer!, at: 0)
     }

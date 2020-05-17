@@ -82,15 +82,17 @@ extension ChatViewController: MessagesDisplayDelegate {
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        
         let senderImage = UIImage(named: "senderAvatarSymbol")
         let senderAvatar = Avatar(image: senderImage, initials: "")
-        
-        // rx subscription
-        FirebaseParameters.rxUserAvatar.subscribe(onNext: { (avatarColor) in
-            avatarView.tintColor = FirebaseParameters.Colour(rawValue: avatarColor)?.colours}).disposed(by: disposeBag)
-        
         avatarView.backgroundColor = .clear
+        
+        if isFromCurrentSender(message: message) {
+            Style.rxUserAvatarColour.subscribe(onNext: { (avatarColor) in
+                avatarView.tintColor = Style.Colour(rawValue: avatarColor)?.colours}).disposed(by: disposeBag)
+        } else {
+            avatarView.tintColor = Style.otherUserAvatarColour
+            avatarView.backgroundColor = .white
+        }
         avatarView.set(avatar: senderAvatar)
     }
     

@@ -111,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8822D0DF24705745004E56F6 /* Network Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				88079ADE2467158500E1A9EA /* FirebaseParameters.swift */,
+			);
+			path = "Network Parameters";
+			sourceTree = "<group>";
+		};
 		8854FAF92469EEFD00DE418E /* ChatterUnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +200,6 @@
 			children = (
 				88C7A6D72455C09300B0520F /* AppDelegate.swift */,
 				88C7A6D92455C09300B0520F /* SceneDelegate.swift */,
-				88079ADE2467158500E1A9EA /* FirebaseParameters.swift */,
 				88C7A6E82455C09C00B0520F /* Info.plist */,
 				88F822CD245A0BD600C61FB5 /* GoogleService-Info.plist */,
 				88C7A6EE2455C0A800B0520F /* Model */,
@@ -208,6 +215,7 @@
 			children = (
 				88F822D4245B705400C61FB5 /* Messages.swift */,
 				88F822D6245B717400C61FB5 /* User.swift */,
+				8822D0DF24705745004E56F6 /* Network Parameters */,
 			);
 			path = Model;
 			sourceTree = "<group>";

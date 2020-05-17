@@ -71,41 +71,53 @@
                                     <constraint firstAttribute="height" constant="151.33333333333331" id="kQK-Tw-ce4"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-LX-dC5">
-                                <rect key="frame" x="175" y="309" width="17" height="22"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="senderAvatarSymbol"/>
-                                <connections>
-                                    <action selector="tapAvatar1:" destination="f4o-xh-Aln" eventType="touchUpInside" id="ugg-ae-zxs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN1-Zg-XJt">
-                                <rect key="frame" x="222" y="309" width="17" height="22"/>
-                                <state key="normal" image="senderAvatarSymbol"/>
-                                <connections>
-                                    <action selector="tapAvatar2:" destination="f4o-xh-Aln" eventType="touchUpInside" id="QG3-3Q-6Cq"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O56-AP-7Ve">
+                                <rect key="frame" x="277" y="45" width="114" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HH6-BU-ez7"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3IA-no-u3E" userLabel="Avatar Stack View">
+                                <rect key="frame" x="305" y="59" width="64" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIM-LX-dC5">
+                                        <rect key="frame" x="0.0" y="0.0" width="17" height="22"/>
+                                        <state key="normal" image="senderAvatarSymbol"/>
+                                        <connections>
+                                            <action selector="tapAvatar1:" destination="f4o-xh-Aln" eventType="touchUpInside" id="ugg-ae-zxs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN1-Zg-XJt">
+                                        <rect key="frame" x="47" y="0.0" width="17" height="22"/>
+                                        <state key="normal" image="senderAvatarSymbol"/>
+                                        <connections>
+                                            <action selector="tapAvatar2:" destination="f4o-xh-Aln" eventType="touchUpInside" id="QG3-3Q-6Cq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerY" secondItem="hee-SC-uaW" secondAttribute="centerY" id="2S9-VJ-3QI"/>
                             <constraint firstItem="oM0-r0-T6e" firstAttribute="top" secondItem="hee-SC-uaW" secondAttribute="top" constant="150" id="DbJ-Hv-HvQ"/>
-                            <constraint firstItem="eN1-Zg-XJt" firstAttribute="top" secondItem="oM0-r0-T6e" secondAttribute="bottom" constant="7.6666666666666856" id="F2r-3W-dhr"/>
+                            <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="3IA-no-u3E" secondAttribute="trailing" constant="45" id="FbJ-il-wh0"/>
                             <constraint firstItem="M4F-sE-AHg" firstAttribute="top" secondItem="1xu-lf-czx" secondAttribute="bottom" constant="20" id="GgC-ca-ZSq"/>
                             <constraint firstItem="M4F-sE-AHg" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="IJC-Me-zBk"/>
-                            <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="eN1-Zg-XJt" secondAttribute="trailing" constant="175" id="Iok-Vp-F74"/>
+                            <constraint firstAttribute="trailing" secondItem="O56-AP-7Ve" secondAttribute="trailing" constant="23" id="JRv-gg-P0S"/>
+                            <constraint firstItem="O56-AP-7Ve" firstAttribute="top" secondItem="hee-SC-uaW" secondAttribute="top" constant="45" id="NNP-Mu-cJ1"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="20" id="QiX-BW-Cbf"/>
                             <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="1xu-lf-czx" secondAttribute="trailing" constant="20" id="QyK-qq-dY6"/>
-                            <constraint firstItem="eIM-LX-dC5" firstAttribute="top" secondItem="oM0-r0-T6e" secondAttribute="bottom" constant="7.6666666666666856" id="VDr-GL-5eS"/>
-                            <constraint firstItem="eIM-LX-dC5" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="175" id="eYB-gH-Zvc"/>
+                            <constraint firstItem="O56-AP-7Ve" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="277" id="RSB-E3-9iD"/>
                             <constraint firstItem="oM0-r0-T6e" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="gXK-ll-6Us"/>
+                            <constraint firstAttribute="top" secondItem="3IA-no-u3E" secondAttribute="top" constant="-59" id="hJC-wK-95A"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="rVS-LV-iXQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWM-BM-KCw"/>
                     </view>
                     <navigationItem key="navigationItem" id="iRj-LU-UIH"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="O56-AP-7Ve" id="gyK-Hs-Nsb"/>
                         <outlet property="avatarSelect1" destination="eIM-LX-dC5" id="5FL-ur-jrj"/>
                         <outlet property="avatarSelect2" destination="eN1-Zg-XJt" id="POp-f6-qnw"/>
                         <outlet property="chatterLogo" destination="oM0-r0-T6e" id="UDb-x3-orH"/>
@@ -119,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsX-Vc-yYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4423" y="543"/>
+            <point key="canvasLocation" x="-4423.188405797102" y="541.74107142857144"/>
         </scene>
         <!--Register-->
         <scene sceneID="J2B-nk-Ac1">
@@ -145,7 +157,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18J-sS-BLc">
                                         <rect key="frame" x="0.0" y="128" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4k-Zj-LeP">
                                         <rect key="frame" x="0.0" y="192" width="374" height="30"/>
