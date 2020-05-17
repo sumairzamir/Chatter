@@ -18,9 +18,9 @@
 		88A28D39246EAED800AF3397 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A28D38246EAED800AF3397 /* ChatViewModel.swift */; };
 		88A28D3B246EB30800AF3397 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A28D3A246EB30800AF3397 /* SignUpViewModel.swift */; };
 		88A7D88B246A9798002831B7 /* Chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A7D888246A9798002831B7 /* Chat.png */; };
-		88A7D88C246A9798002831B7 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A7D889246A9798002831B7 /* Login.png */; };
-		88A7D88D246A9798002831B7 /* Signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A7D88A246A9798002831B7 /* Signup.png */; };
 		88C1B096246EF14D008E6641 /* ChatViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1B095246EF14D008E6641 /* ChatViewExtensions.swift */; };
+		88C3880E2471B0DF00C0D11E /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C3880C2471B0DE00C0D11E /* Login.png */; };
+		88C3880F2471B0DF00C0D11E /* Signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C3880D2471B0DF00C0D11E /* Signup.png */; };
 		88C7A6D82455C09300B0520F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D72455C09300B0520F /* AppDelegate.swift */; };
 		88C7A6DA2455C09300B0520F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7A6D92455C09300B0520F /* SceneDelegate.swift */; };
 		88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C7A6E32455C09C00B0520F /* Assets.xcassets */; };
@@ -66,9 +66,9 @@
 		88A28D38246EAED800AF3397 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		88A28D3A246EB30800AF3397 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		88A7D888246A9798002831B7 /* Chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chat.png; sourceTree = "<group>"; };
-		88A7D889246A9798002831B7 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
-		88A7D88A246A9798002831B7 /* Signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signup.png; sourceTree = "<group>"; };
 		88C1B095246EF14D008E6641 /* ChatViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewExtensions.swift; sourceTree = "<group>"; };
+		88C3880C2471B0DE00C0D11E /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
+		88C3880D2471B0DF00C0D11E /* Signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signup.png; sourceTree = "<group>"; };
 		88C7A6D42455C09300B0520F /* Chatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7A6D72455C09300B0520F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C7A6D92455C09300B0520F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,9 +150,9 @@
 		88A7D887246A976B002831B7 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				88A7D88A246A9798002831B7 /* Signup.png */,
-				88A7D889246A9798002831B7 /* Login.png */,
 				88A7D888246A9798002831B7 /* Chat.png */,
+				88C3880C2471B0DE00C0D11E /* Login.png */,
+				88C3880D2471B0DF00C0D11E /* Signup.png */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -383,8 +383,8 @@
 			files = (
 				88A7D88B246A9798002831B7 /* Chat.png in Resources */,
 				88C7A6E72455C09C00B0520F /* LaunchScreen.storyboard in Resources */,
-				88A7D88C246A9798002831B7 /* Login.png in Resources */,
-				88A7D88D246A9798002831B7 /* Signup.png in Resources */,
+				88C3880E2471B0DF00C0D11E /* Login.png in Resources */,
+				88C3880F2471B0DF00C0D11E /* Signup.png in Resources */,
 				884DED092469BF4500C1E627 /* loginvideo.mp4 in Resources */,
 				88F822CE245A0BD600C61FB5 /* GoogleService-Info.plist in Resources */,
 				88C7A6E42455C09C00B0520F /* Assets.xcassets in Resources */,
