@@ -128,9 +128,7 @@ extension ChatViewModel {
                     if self.messagesArray.contains(where: { (message) -> Bool in
                         message.messageId == messageId
                     }) {
-                        DispatchQueue.main.async {
-                            completionHandler(false,error)
-                        }
+                        print("message in array")
                     } else {
                         self.messagesArray.append(message)
                         DispatchQueue.main.async {
