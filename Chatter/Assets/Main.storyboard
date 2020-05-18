@@ -64,17 +64,18 @@
                                 <rect key="frame" x="197" y="562" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oM0-r0-T6e">
-                                <rect key="frame" x="132" y="151" width="150" height="150"/>
+                                <rect key="frame" x="132" y="174" width="150" height="149.66666666666669"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Jdt-le-O7J"/>
-                                    <constraint firstAttribute="height" constant="151.33333333333331" id="kQK-Tw-ce4"/>
+                                    <constraint firstAttribute="width" secondItem="oM0-r0-T6e" secondAttribute="height" multiplier="150:151" id="IYW-pt-xgN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="Jdt-le-O7J"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O56-AP-7Ve">
                                 <rect key="frame" x="277" y="45" width="114" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HH6-BU-ez7"/>
+                                    <constraint firstAttribute="width" constant="114" id="LNY-fM-Jqf"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3IA-no-u3E" userLabel="Avatar Stack View">
@@ -100,7 +101,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerY" secondItem="hee-SC-uaW" secondAttribute="centerY" id="2S9-VJ-3QI"/>
-                            <constraint firstItem="oM0-r0-T6e" firstAttribute="top" secondItem="hee-SC-uaW" secondAttribute="top" constant="150" id="DbJ-Hv-HvQ"/>
                             <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="3IA-no-u3E" secondAttribute="trailing" constant="45" id="FbJ-il-wh0"/>
                             <constraint firstItem="M4F-sE-AHg" firstAttribute="top" secondItem="1xu-lf-czx" secondAttribute="bottom" constant="20" id="GgC-ca-ZSq"/>
                             <constraint firstItem="M4F-sE-AHg" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="IJC-Me-zBk"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="O56-AP-7Ve" firstAttribute="top" secondItem="hee-SC-uaW" secondAttribute="top" constant="45" id="NNP-Mu-cJ1"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="20" id="QiX-BW-Cbf"/>
                             <constraint firstItem="aWM-BM-KCw" firstAttribute="trailing" secondItem="1xu-lf-czx" secondAttribute="trailing" constant="20" id="QyK-qq-dY6"/>
-                            <constraint firstItem="O56-AP-7Ve" firstAttribute="leading" secondItem="aWM-BM-KCw" secondAttribute="leading" constant="277" id="RSB-E3-9iD"/>
+                            <constraint firstItem="1xu-lf-czx" firstAttribute="top" secondItem="oM0-r0-T6e" secondAttribute="bottom" constant="30" id="UZu-Zv-A84"/>
                             <constraint firstItem="oM0-r0-T6e" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="gXK-ll-6Us"/>
                             <constraint firstAttribute="top" secondItem="3IA-no-u3E" secondAttribute="top" constant="-59" id="hJC-wK-95A"/>
                             <constraint firstItem="1xu-lf-czx" firstAttribute="centerX" secondItem="hee-SC-uaW" secondAttribute="centerX" id="rVS-LV-iXQ"/>
@@ -235,7 +235,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.icloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oa6-xa-j4n">
-                                        <rect key="frame" x="0.0" y="1.3333333333333333" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="1.3333333333333321" width="30" height="29.333333333333346"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
