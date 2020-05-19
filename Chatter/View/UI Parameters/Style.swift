@@ -48,14 +48,15 @@ extension Style {
     }
     
     class func styleTextFieldLine(_ textfield: UITextField) {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 10, width: textfield.frame.width, height: 2)
-        bottomLine.backgroundColor = UIColor.white.cgColor
-        textfield.borderStyle = .none
-        textfield.layer.addSublayer(bottomLine)
-        textfield.textColor = .white
+        DispatchQueue.main.async {
+            let bottomLine = CALayer()
+            bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 10, width: textfield.frame.width, height: 2)
+            bottomLine.backgroundColor = UIColor.white.cgColor
+            textfield.layer.addSublayer(bottomLine)
+            textfield.borderStyle = .none
+            textfield.textColor = .white
+        }
     }
-    
     
     class func styleButtonBlack(_ button: UIButton) {
         button.backgroundColor = UIColor.black.withAlphaComponent(0.75)
