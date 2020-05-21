@@ -100,9 +100,31 @@ extension ChatViewController: MessagesDisplayDelegate {
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
     
+    func configureMessageInputBar() {
+        messageInputBar.sendButton.setSize(CGSize(width: 40, height: 40), animated: false)
+        messageInputBar.sendButton.contentMode = .scaleAspectFit
+        messageInputBar.sendButton.contentVerticalAlignment = .fill
+        messageInputBar.sendButton.contentHorizontalAlignment = .fill
+        messageInputBar.sendButton.title = nil
+        messageInputBar.sendButton.image = UIImage(named: "sendSymbol")
+        messageInputBar.sendButton.imageView?.tintColor = .systemGray
+        messageInputBar.sendButton.activityViewColor = .white
+        messageInputBar.sendButton
+            .onEnabled { (item) in
+                UIView.animate(withDuration: 0.3) {
+                    item.imageView?.tintColor = .systemBlue
+                }
+        }.onDisabled { (item) in
+            UIView.animate(withDuration: 0.3) {
+                item.imageView?.tintColor = .systemGray
+            }
+        }
+    }
+    
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let components = inputBar.inputTextView.components
         messageInputBar.inputTextView.text = String()
+        messageInputBar.sendButton.startAnimating()
         insertMessages(components)
     }
     
@@ -121,6 +143,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
                 ]) { (error) in
                     if error != nil {
                         self.showLogicFailure(title: "Unable to insert message", message: error?.localizedDescription ?? "")
+                        self.messageInputBar.sendButton.stopAnimating()
                     }
                 }
             }

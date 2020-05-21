@@ -28,6 +28,7 @@ class ChatViewController: MessagesViewController {
         chatViewModel.configureNetwork(networkView)
         defineDelegates()
         configureUI()
+        configureMessageInputBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +63,7 @@ class ChatViewController: MessagesViewController {
     }
     
     func handleMessageData(success: Bool, error: Error?) {
+        messageInputBar.sendButton.stopAnimating()
         if success {
             configureMessageView()
         } else {
